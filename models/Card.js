@@ -31,7 +31,7 @@ var CardSchema = new Schema({
   chosen:{
     type:Boolean,
     default:false 
-  }
+  },
   // `card` is an object that stores a card id
   // The ref property links the ObjectId to the card model
   // This allows us to populate the card with an associated Note

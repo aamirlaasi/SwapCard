@@ -15,7 +15,7 @@ const Card = props => (
           <strong>Price:</strong> {props.price}
         </li>
         <li>
-          <strong>ExpDate:</strong> {props.expdate}
+          <strong>ExpDate:</strong> {props.exp}
         </li>
       </ul>
     </div>

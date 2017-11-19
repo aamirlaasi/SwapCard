@@ -1,8 +1,8 @@
 module.exports = {
-  Card: require("./Card"),
-  User: require("./User")
+  Card: require("./card")
+  // User: require("./User")
 };
 
-module.exports = {
-  Book: require("./book")
-};
+// module.exports = {
+//   Book: require("./book")
+// };

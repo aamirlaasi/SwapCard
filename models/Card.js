@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new CardSchema object
 // This is similar to a Sequelize model
-var CardSchema = new Schema({
+var cardSchema = new Schema({
  
   store: {
     type: String,
@@ -42,7 +42,7 @@ var CardSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Card = mongoose.model("Card", CardSchema);
+var Card = mongoose.model("Card", cardSchema);
 
 // Export the Article model
 module.exports = Card;

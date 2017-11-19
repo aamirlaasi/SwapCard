@@ -1,11 +1,10 @@
 import React from "react";
-import Books from "./pages/Books";
-import Nav from "./components/Nav";
+import Cards from "./pages/Cards";
+
 
 const App = () => 
-  <div>
-    <Nav />
-    <Books />
+  <div className="container-fluid">
+    <Cards />
   </div>;
 
 export default App;

@@ -7,10 +7,10 @@ router.route("/")
 //   .post(cardController.create);
 
 // Matches with "/api/cards/:id"
-// router
-//   .route("/:id")
-//   .get(cardController.findById)
-//   .put(cardController.update)
-//   .delete(cardController.remove);
+router
+  .route("/:id")
+  .get(cardsController.findById)
+//   .put(cardsController.update)
+//   .delete(cardsController.remove);
 
 module.exports = router;

@@ -15,6 +15,7 @@ const CardModal = (props) => (
             contentLabel="Card details"
         >
             <div  className="cardModal text-center" onClick={props.loadModal}>
+                <h3>Gift Card you wish to trade</h3>
                 {/* <div className="img-container"> */}
                 <img alt={props.store} src={props.fimage} />
                 </div>

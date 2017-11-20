@@ -2,9 +2,19 @@ import React from "react";
 import Modal from "react-modal";
 import "./CardModal.css";
 const style = {
-    content: {
-      width: "100%",
-      height: "800px",
+    content : {
+        position                   : 'absolute',
+        top                        : '40px',
+        left                       : '100px',
+        right                      : '100px',
+        bottom                     : '40px',
+        border                     : '2px solid #ccc',
+        background                 : '#fff',
+        overflow                   : 'auto',
+        WebkitOverflowScrolling    : 'touch',
+        borderRadius               : '4px',
+        outline                    : 'none',
+        padding                    : '20px'
     }
   };
 
@@ -31,7 +41,7 @@ const CardModal = (props) => (
                         <strong>ExpDate:</strong> {props.exp}
                         </li>
                     </ul>
-                    <button style={{"marginRight": "20px"}} className="btn btn-success" >CLICK TO TRADE</button>
+                    <button style={{"marginRight": "20px"}} className="btn btn-success" onClick={props.handleTrade}>CLICK TO TRADE</button>
 
                     <button className="btn btn-danger" onClick={props.closeModal}>CLOSE</button>
                 {/* </div> */}

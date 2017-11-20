@@ -1,6 +1,5 @@
 import React from "react";
 import Modal from "react-modal";
-// import "./Login.css"
 
 const style = {
     content : {
@@ -19,29 +18,23 @@ const style = {
         opacity                    : "1"
     }
   };
-const Login = () => (
+
+const Signup = () => (
     <Modal
         style={style}
         isOpen={false}
         contentLabel="Login"
     >
-        <div id="login-modal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div className="modal-dialog">
-            <div className="loginmodal-container">
-                <h1>Login to Your Account</h1>
-                <form>
-                <input type="text" name="user" placeholder="Username" />
-                <input type="password" name="pass" placeholder="Password" />
-                <input type="submit" name="login" className="login loginmodal-submit" value="Login" />
-                </form>
-                
-                <div className="login-help">
-                <a href="www.google.com">Register</a> - <a href="www.google.com">Forgot Password</a>
-                </div>
-            </div>
-        </div>
+        <div>
+            <legend>New to SwapCard? Sign up!</legend>
+            <form accept-charset="UTF-8" action="" method="post">
+                <input  name="name" placeholder="Full Name" type="text" />
+                <input  name="username" placeholder="Username" type="text" />
+                <input  name="password" placeholder="Password" type="password" /> 
+                <button className="btn btn-primary" type="submit">Sign up for WebApp</button>
+            </form>
         </div>
     </Modal>
 )
 
-export default Login;
+export default Signup;

@@ -47,6 +47,12 @@ class Cards extends Component {
         })
         .catch(err => console.log(err));
     }
+
+    //handleTrade function
+
+    handleTrade = () => {
+        alert("function in testing");
+    }
     
     render() {
         return (
@@ -69,6 +75,7 @@ class Cards extends Component {
                 </div>
                 {/* render Modal */}
                 <CardModal 
+                    handleTrade = {this.handleTrade}
                     selectedCard={this.state.selectedCard}
                     closeModal={this.closeModal}
                     fimage={this.state.cardModal.fimage} 

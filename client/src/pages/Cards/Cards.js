@@ -19,7 +19,7 @@ class Cards extends Component {
     loadCards = () => {
         API.getCards()
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             this.setState({cards: res.data})
         }
             

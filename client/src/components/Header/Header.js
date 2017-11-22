@@ -2,7 +2,6 @@ import React from "react";
 import "./Header.css";
 import Login from "../Login";
 import Signup from "../Signup";
-import UserProfile from "../UserProfile";
 import { Link } from "react-router-dom";
 
 

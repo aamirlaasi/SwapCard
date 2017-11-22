@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./UserProfile.css";
-import Header from "../Header";
+// import Header from "../Header";
 import { Link } from "react-router-dom";
 
 class UserProfile extends Component {

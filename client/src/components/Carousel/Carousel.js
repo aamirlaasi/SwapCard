@@ -6,21 +6,6 @@ const Carousel = () => (
         <div class="slide">
             <img src="http://placehold.it/300x150"/>
         </div>
-        <div class="slide">
-            <img src="http://placehold.it/300x150"/>
-        </div>
-        <div class="slide">
-            <img src="http://placehold.it/300x150"/>
-        </div>
-        <div class="slide">
-            <img src="http://placehold.it/300x150"/>
-        </div>
-        <div class="slide">
-            <img src="http://placehold.it/300x150"/>
-        </div>
-        <div class="slide">
-            <img src="http://placehold.it/300x150"/>
-        </div>
     </div>
 )
 

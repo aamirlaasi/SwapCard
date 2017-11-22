@@ -62,6 +62,7 @@ class CardModal extends Component {
                             <hr />
                             {/* Card that user have */}
                             <div className="row">
+                                 <h3>Your cards (which has same price to the above card)</h3>
                                 {true ? <Carousel /> : "Please login or create accout to trade card"}
                             </div>                
                         </div>

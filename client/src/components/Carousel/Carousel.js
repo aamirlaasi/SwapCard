@@ -3,7 +3,6 @@ import "./Carousel.css";
 
 const Carousel = () => (
     <div id="carousel">
-        <h3>Your cards (which has same price to the above card)</h3>
 
         <div class="slide">
             <img src="https://www.paypal-gifts.com/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/t/o/toysrus_card_xxlweb.png" alt="sometext"/>

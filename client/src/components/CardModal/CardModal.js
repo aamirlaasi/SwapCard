@@ -59,8 +59,7 @@ const CardModal = (props) => (
                 <hr />
                 {/* Card that user have */}
                 <div className="row">
-                    <h3>Your cards</h3>
-                    <Carousel />
+                    {true ? <Carousel /> : "Please login or create accout to trade card"}
                 </div>                
 
             </div>

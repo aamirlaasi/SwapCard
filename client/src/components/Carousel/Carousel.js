@@ -4,28 +4,25 @@ import "./Carousel.css";
 const Carousel = () => (
     <div id="carousel">
         <div class="slide">
-            <img src="http://placehold.it/300x150"/>
+            <img src="http://placehold.it/300x150" alt="sometext"/>
         </div>
         <div class="slide">
-            <img src="http://placehold.it/300x150"/>
+            <img src="http://placehold.it/300x150" alt="sometext"/>
         </div>
         <div class="slide">
-            <img src="http://placehold.it/300x150"/>
+            <img src="http://placehold.it/300x150" alt="sometext"/>
         </div>
         <div class="slide">
-            <img src="http://placehold.it/300x150"/>
+            <img src="http://placehold.it/300x150" alt="sometext"/>
         </div>
         <div class="slide">
-            <img src="http://placehold.it/300x150"/>
+            <img src="http://placehold.it/300x150" alt="sometext"/>
         </div>
         <div class="slide">
-            <img src="http://placehold.it/300x150"/>
+            <img src="http://placehold.it/300x150" alt="sometext"/>
         </div>
         <div class="slide">
-            <img src="http://placehold.it/300x150"/>
-        </div>
-        <div class="slide">
-            <img src="http://placehold.it/300x150"/>
+            <img src="http://placehold.it/300x150" alt="sometext"/>
         </div>
     </div>
 )

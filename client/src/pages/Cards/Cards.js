@@ -45,7 +45,7 @@ class Cards extends Component {
             this.loadModal();
             this.setState({cardModal: res.data})
         })
-        .catch(err => console.log(err));
+        .catch(err => {console.log(err);alert("You might not start the app yet. Run yarn build and try again")});
     }
 
     //handleTrade function

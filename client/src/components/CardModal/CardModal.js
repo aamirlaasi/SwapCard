@@ -29,14 +29,17 @@ const CardModal = (props) => (
                 <div className="row content">
                     <h3>Gift Card you wish to trade</h3>
                     <hr />
-                    <div className="img-container text-center col-lg-8" onClick={props.loadModal}>
+                    <div className="img-container text-center col-lg-7" onClick={props.loadModal}>
                         <img alt={props.store} src={props.fimage} />
                     </div>
 
-                    <div className="cardDetail col-lg-4">
+                    <div className="cardDetail col-lg-5">
                         <ul>
                             <li>
                             <strong>Owner:</strong>
+                            </li>
+                            <li>
+                            <strong>User rating: 5</strong>
                             </li>
                             <li>
                             <strong>Store:</strong> {props.store}
@@ -56,6 +59,7 @@ const CardModal = (props) => (
                 <hr />
                 {/* Card that user have */}
                 <div className="row">
+                    <h3>Your cards</h3>
                     <Carousel />
                 </div>                
 

@@ -3,6 +3,7 @@
     height: 150px;
     overflow: scroll;
     white-space:nowrap;
+    margin-top: 10px;
 }
 
 #carousel .slide {

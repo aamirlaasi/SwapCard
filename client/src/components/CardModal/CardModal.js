@@ -32,6 +32,9 @@ const CardModal = (props) => (
                 <div className="content">
                     <ul>
                         <li>
+                        <strong>Owner:</strong>
+                        </li>
+                        <li>
                         <strong>Store:</strong> {props.store}
                         </li>
                         <li>

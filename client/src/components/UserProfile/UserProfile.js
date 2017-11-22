@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./UserProfile.css";
 // import Header from "../Header";
 import { Link } from "react-router-dom";
+import API from "../../utils/API";
 
 class UserProfile extends Component {
     render() {
@@ -10,8 +11,9 @@ class UserProfile extends Component {
             <h1>SwapCard Dashboard</h1>
             {/* creat button to test userprofile page route */}
             <button className={window.location.pathname === "/" ? "active" : ""}>
-            <Link to="/">Back to homepage</Link>
-        </button>
+                <Link to="/">Back to homepage</Link>
+            </button>
+
     </div>
         )
     }

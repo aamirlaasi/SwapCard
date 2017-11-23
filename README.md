@@ -29,4 +29,6 @@ mongoose
 react-router-dom
 twilio
 passport
+multer
+Base64
 

@@ -1,51 +1,70 @@
-var mongoose = require("mongoose");
+const bcrypt = require('bcrypt-nodejs');
+const crypto = require('crypto');
+const mongoose = require('mongoose');
 
-// Save a reference to the Schema constructor
-var Schema = mongoose.Schema;
+const userSchema = new mongoose.Schema({
+  email: { type: String, unique: true },
+  password: String,
+  passwordResetToken: String,
+  passwordResetExpires: Date,
 
-// Using the Schema constructor, create a new UserSchema object
-// This is similar to a Sequelize model
-var UserSchema = new Schema({
-  
-  fullName: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    unique: true,
-    match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
-  },
-  userCreated: {
-    type: Date,
-    default: Date.now
-  },
-  password: {
-    type: String,
-    trim: true,
-    required: "Password is Required",
-    validate: [
-      function(input) {
-        return input.length >= 6;
-      },
-      "Password should be longer."
-    ]
-  },
-  giftcard: [
-    {
-      // Store ObjectIds in the array
-      type: Schema.Types.ObjectId,
-      // The ObjectIds will refer to the ids in the Card model
-      ref: "Card"
-    }
-  ]
-  
+  facebook: String,
+  // twitter: String,
+  // google: String,
+  // github: String,
+  // instagram: String,
+  // linkedin: String,
+  // steam: String,
+  tokens: Array,
 
-  
+  profile: {
+    name: String
+    // gender: String,
+    // location: String,
+    // website: String,
+    // picture: String
+  }
+}, { timestamps: true });
+
+/**
+ * Password hash middleware.
+ */
+userSchema.pre('save', function save(next) {
+  const user = this;
+  if (!user.isModified('password')) { return next(); }
+  bcrypt.genSalt(10, (err, salt) => {
+    if (err) { return next(err); }
+    bcrypt.hash(user.password, salt, null, (err, hash) => {
+      if (err) { return next(err); }
+      user.password = hash;
+      next();
+    });
+  });
 });
 
-// This creates our model from the above schema, using mongoose's model method
-var User = mongoose.model("User", UserSchema);
+/**
+ * Helper method for validating user's password.
+ */
+userSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
+  bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
+    cb(err, isMatch);
+  });
+};
 
-// Export the User model
+/**
+ * Helper method for getting user's gravatar.
+ */
+// userSchema.methods.gravatar = function gravatar(size) {
+//   if (!size) {
+//     size = 200;
+//   }
+//   if (!this.email) {
+//     return `https://gravatar.com/avatar/?s=${size}&d=retro`;
+//   }
+//   const md5 = crypto.createHash('md5').update(this.email).digest('hex');
+//   return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
+// };
+
+const User = mongoose.model('User', userSchema);
+
 module.exports = User;

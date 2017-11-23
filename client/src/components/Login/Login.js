@@ -22,7 +22,7 @@ const style = {
 const Login = () => (
     <Modal
         style={style}
-        isOpen={false}
+        isOpen={true}
         contentLabel="Login"
     >
         <div id="login-modal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -34,7 +34,7 @@ const Login = () => (
                 <input type="password" name="pass" placeholder="Password" />
                 <input type="submit" name="login" className="login loginmodal-submit" value="Login" />
                 </form>
-                
+
                 <div className="login-help">
                 <a href="www.google.com">Register</a> - <a href="www.google.com">Forgot Password</a>
                 </div>

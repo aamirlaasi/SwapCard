@@ -17,6 +17,12 @@ class UserProfile extends Component {
         })
     }
 
+    unselectAddNewCard = () => {
+        this.setState({
+            selectAddNewCard: false
+        })
+    }
+
     render() {
         return (
             <div>
@@ -51,7 +57,7 @@ class UserProfile extends Component {
                         </div>
                     </div>
                 </div>
-                <AddNewCard selectAddNewCard={this.state.selectAddNewCard}/>
+                <AddNewCard unselectAddNewCard={this.unselectAddNewCard} selectAddNewCard={this.state.selectAddNewCard}/>
             </div>
         )
     }

@@ -26,7 +26,7 @@ class AddNewCard extends Component {
         return(
             <Modal
                 isOpen={!!this.props.selectAddNewCard}
-                // onRequestClose={}
+                onRequestClose={this.props.unselectAddNewCard}
             >
                 <div>
                     <h2>Take picture of front and back, input card details</h2>
@@ -38,6 +38,7 @@ class AddNewCard extends Component {
                         <button onClick={this.selectWebcam}>Capture front of Card</button>
                         {/* <img src={this.state.front}/> */}
                         <button>Capture back of Card</button>
+                        <button type="submit">Submit</button>
                     </form>
                 </div>
                 <Capture unselectWebcam={this.unselectWebcam} selectWebcam={this.state.selectWebcam} front={this.state.front} />

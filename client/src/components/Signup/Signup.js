@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import "./Signup.css";
 
 const style = {
     content : {
@@ -19,18 +20,19 @@ const style = {
     }
   };
 
-const Signup = () => (
+const Signup = (props) => (
     <Modal
         style={style}
-        isOpen={false}
-        contentLabel="Login"
+        isOpen={props.handleSignup}
+        onRequestClose={props.closeSignup}
+        contentLabel="Signup"
     >
         <div>
             <legend>New to SwapCard? Sign up!</legend>
             <form accept-charset="UTF-8" action="" method="post">
                 <input  name="name" placeholder="Full Name" type="text" />
                 <input  name="username" placeholder="Username" type="text" />
-                <input  name="password" placeholder="Password" type="password" /> 
+                <input  name="password" placeholder="Password" type="password" />
                 <button className="btn btn-primary" type="submit">Sign up for WebApp</button>
             </form>
         </div>

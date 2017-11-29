@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-// import "./Login.css"
+import "./Login.css";
 
 const style = {
     content : {
@@ -19,10 +19,11 @@ const style = {
         opacity                    : "1"
     }
   };
-const Login = () => (
+const Login = (props) => (
     <Modal
         style={style}
-        isOpen={true}
+        isOpen={props.handleLogin}
+        onRequestClose={props.closeLogin}
         contentLabel="Login"
     >
         <div id="login-modal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">

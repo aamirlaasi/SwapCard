@@ -22,7 +22,7 @@ class Cards extends Component {
             console.log(res.data);
             this.setState({cards: res.data})
         }
-            
+
         ).catch(err => console.log(err));
     };
 
@@ -53,7 +53,7 @@ class Cards extends Component {
     handleTrade = () => {
         alert("function in testing");
     }
-    
+
     render() {
         return (
             <div className="row">
@@ -64,7 +64,7 @@ class Cards extends Component {
                             <span key={card._id}>
                                 <Card
                                     onClick={()=>this.chooseCard(card._id)}
-                                    fimage={card.fimage} 
+                                    fimage={card.fimage}
                                     store={card.store}
                                     price={card.price}
                                     exp={card.exp}
@@ -74,16 +74,20 @@ class Cards extends Component {
                     })}
                 </div>
                 {/* render Modal */}
-                <CardModal 
+                <CardModal
                     handleTrade = {this.handleTrade}
                     selectedCard={this.state.selectedCard}
                     closeModal={this.closeModal}
-                    fimage={this.state.cardModal.fimage} 
+                    fimage={this.state.cardModal.fimage}
                     key={this.state.cardModal._id}
                     store={this.state.cardModal.store}
                     price={this.state.cardModal.price}
                     exp={this.state.cardModal.exp}
                 />
+                {/* render Login Modal */}
+                {/* <Login
+                  selectedLogin={this.state.selectedLogin}
+                /> */}
             </div>
         )
     }

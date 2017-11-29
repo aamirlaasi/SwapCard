@@ -19,10 +19,11 @@ const style = {
         opacity                    : "1"
     }
   };
-const Login = () => (
+const Login = (props) => (
     <Modal
         style={style}
-        isOpen={false}
+        isOpen={props.handleLogin}
+        onRequestClose={props.closeLogin}
         contentLabel="Login"
     >
         <div id="login-modal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">

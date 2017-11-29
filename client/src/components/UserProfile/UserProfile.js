@@ -18,9 +18,30 @@ class UserProfile extends Component {
                     </button>
                 </div>
                 {/* end header */}
-                <div>
-                    
+                <div className="container">
+                    <h2>Your Information</h2>
+                    <hr />
+                    {/* your information */}
+                    <div className="row">
+                        <div className="col-lg-5">
+                            <p>Name: </p>
+                            <p>Email Address: </p>
+                        </div>
+                    </div>
+                    <h2>Cards Control</h2>
+                    <hr />
+                    <div className="row">
+                        <div>
+                            <button className="btn btn-success">Add new Card</button>
+                            <button className="btn btn-danger">Click on card to remove</button>
+                            
+                        </div>
+                        <div>
+                            <Carousel />
+                        </div>
+                    </div>
                 </div>
+                
             </div>
         )
     }

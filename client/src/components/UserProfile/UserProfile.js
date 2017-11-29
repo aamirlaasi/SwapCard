@@ -4,8 +4,19 @@ import "./UserProfile.css";
 import { Link } from "react-router-dom";
 // import API from "../../utils/API";
 import Carousel from "../Carousel";
+import AddNewCard from "../AddNewCard";
 
 class UserProfile extends Component {
+    state = {
+        selectAddNewCard: undefined
+    }
+
+    selectAddNewCard = () => {
+        this.setState({
+            selectAddNewCard: true
+        })
+    }
+
     render() {
         return (
             <div>
@@ -32,16 +43,15 @@ class UserProfile extends Component {
                     <hr />
                     <div className="row">
                         <div>
-                            <button className="btn btn-success">Add new Card</button>
+                            <button className="btn btn-success" onClick={this.selectAddNewCard} >Add new Card</button>
                             <button className="btn btn-danger">Click on card to remove</button>
-                            
                         </div>
                         <div>
                             <Carousel />
                         </div>
                     </div>
                 </div>
-                
+                <AddNewCard selectAddNewCard={this.state.selectAddNewCard}/>
             </div>
         )
     }

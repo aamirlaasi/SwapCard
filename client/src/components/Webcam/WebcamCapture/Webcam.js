@@ -2,12 +2,21 @@ import Webcam from 'react-webcam';
 import React from "react"
 
 class WebcamCapture extends React.Component {
+    state = {
+      img: "",
+      selectWebcam: true
+    }
     setRef = (webcam) => {
       this.webcam = webcam;
     }
    
-    capture = () => {
+    capture = (e) => {
+      e.preventDefault();
       const imageSrc = this.webcam.getScreenshot();
+      this.setState({
+        img: imageSrc,
+        selectWebcam: false
+      })
     };
    
     render() {
@@ -20,7 +29,8 @@ class WebcamCapture extends React.Component {
             screenshotFormat="image/jpeg"
             width={350}
           />
-          <button onClick={this.capture}>Capture photo</button>
+          <button onClick={this.capture} selectWebcam={this.state.selectWebcam}>Front of card</button>
+          <img src={this.state.img} />
         </div>
       );
     }

@@ -15,7 +15,7 @@ const UserSeed = [
   {
     fullname: "Firas AlOmairi",
     email:"firas.lcc@gmail.com",
-    password: "Firas123",
+    password: "Firas123356827525",
     userCreated: new Date(Date.now()),
     giftcard:[{
       store: "Walmart",

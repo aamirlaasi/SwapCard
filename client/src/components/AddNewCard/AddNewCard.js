@@ -37,12 +37,7 @@ class AddNewCard extends Component {
             back: imageBack,
         })
     }; 
-    unselectWebcam = (e) => {
-        e.preventDefault();
-        this.setState({
-            selectWebcam: false
-        })
-    }
+  
 
     render() {
         return(
@@ -95,7 +90,7 @@ class AddNewCard extends Component {
                         <button onClick={this.props.unselectAddNewCard}>Cancel</button>
                     </form>
                 </div>
-                <WebcamCapture unselectWebcam={this.unselectWebcam} selectWebcam={this.state.selectWebcam} front={this.state.front} />
+                <WebcamCapture selectWebcam={this.state.selectWebcam} front={this.state.front} />
             </Modal>
         )
     }

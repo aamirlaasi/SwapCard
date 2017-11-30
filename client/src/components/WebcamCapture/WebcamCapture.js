@@ -42,7 +42,7 @@ class WebcamCapture extends Component {
               <button onClick={this.capture} selectWebcam={this.state.selectWebcam}>Click here to take picture</button>
               {this.state.img ? (
                 <div>
-                <img src={this.state.img}/>
+                <img src={this.state.img} alt=""/>
                 <br />
                 <button onClick={this.closeWebcam}>Finish</button>
                   

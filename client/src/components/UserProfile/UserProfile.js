@@ -22,7 +22,6 @@ class UserProfile extends Component {
             selectAddNewCard: false
         })
     }
-
     render() {
         return (
             <div>

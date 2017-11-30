@@ -55,7 +55,7 @@ class CardModal extends Component {
                                         </li>
                                     </ul>
                                     <button style={{"marginRight": "20px"}} className="btn btn-success" onClick={this.props.handleTrade}>Notify Owner</button>
-                                    <button className="btn btn-danger" onClick={this.props.closeModal}>CLOSE</button>
+                                    <button className="btn btn-danger" onClick={this.props.closeModal}>Close</button>
                                 </div>
                                 <hr /> 
                             </div>

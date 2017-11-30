@@ -6,6 +6,19 @@ import Modal from "react-modal";
 import WebcamCapture from "../WebcamCapture"
 import "./AddNewCard.css"
 
+const style = {
+    content : {
+        position                   : 'absolute',
+        top                        : '20px',
+        bottom                     : '20px',
+        border                     : '2px solid #ccc',
+        background                 : '#fff',
+        overflow                   : 'auto',
+        borderRadius               : '4px',
+        outline                    : 'none',
+    }
+  };
+
 class AddNewCard extends Component {
     state = {
         // selectWebcam: undefined,
@@ -42,6 +55,7 @@ class AddNewCard extends Component {
     render() {
         return(
             <Modal
+                style={style}
                 isOpen={!!this.props.selectAddNewCard}
                 onRequestClose={this.props.unselectAddNewCard}
             >
@@ -61,7 +75,7 @@ class AddNewCard extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-lg-3">
+                            <div className="col-lg-4">
                                 <Webcam
                                     audio={false}
                                     height={350}

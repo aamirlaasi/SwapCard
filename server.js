@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 // Require all models
-// var db = require("./models");
+ var db = require("./models");
 // Use morgan logger for logging requests
 // app.use(logger("dev"));
 const PORT = process.env.PORT || 3001;
@@ -35,7 +35,33 @@ mongoose.connect(
 // .catch(function(err) {
 //   console.log(err.message);
 // });
+db.User.find({},function(err,users){
+  if(err){console.log(err)}
+    else{
+       
+      // for(var i = 0;i<users.length;i++){
+      //   console.log(users[i].fullname);
+      // }
+    // users.forEach(function(user){
+    //   console.log(user.fullname)
 
+    // })
+    
+    users.forEach(function(user){
+      owner=user.fullname
+      user.giftcard.forEach(function(item){
+        item.owner=owner;
+        db.Card.collection.insert(item).then(function(data){
+         console.log(data.insertedIds.length + " records inserted!");
+        })
+      });
+
+      // console.log(cards);
+
+    })
+    // console.log(cards);
+  }
+})
 
 // Start the API server
 app.listen(PORT, function() {

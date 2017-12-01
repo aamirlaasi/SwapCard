@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 // This is similar to a Sequelize model
 var UserSchema = new Schema({
   
-  fullName: {
+  fullname: {
     type: String,
     required: true
   },
@@ -31,14 +31,18 @@ var UserSchema = new Schema({
       "Password should be longer."
     ]
   },
-  giftcard: [
-    {
-      // Store ObjectIds in the array
-      type: Schema.Types.ObjectId,
-      // The ObjectIds will refer to the ids in the Card model
-      ref: "Card"
-    }
-  ]
+  giftcard: {
+    type: Array,
+    ref:"Card"
+  }
+  // giftcard: [
+  //   {
+  //     // Store ObjectIds in the array
+  //     type: Schema.Types.ObjectId,
+  //     // The ObjectIds will refer to the ids in the Card model
+  //     ref: "Card"
+  //   }
+  // ]
   
 
   

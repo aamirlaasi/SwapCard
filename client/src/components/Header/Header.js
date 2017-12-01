@@ -23,6 +23,14 @@ class Header extends Component {
       selectedSignup:true
     })
   }
+  // handleSignupSubmit = event => {
+  //   event.preventDefault();
+  //   API.saveBook({
+  //     title: this.state.title,
+  //     author: this.state.author,
+  //     synopsis: this.state.synopsis
+  //   })
+  // }
   closeSignup = ()=> {
     this.setState({
       selectedSignup:false
@@ -32,7 +40,7 @@ class Header extends Component {
     return (
         <div className="jumbotron text-center">
             <Login closeLogin={this.closeLogin} handleLogin={this.state.selectedLogin} />
-            <Signup closeSignup={this.closeSignup} handleSignup={this.state.selectedSignup} />
+            <Signup closeSignup={this.closeSignup} handleSignup={this.state.selectedSignup} handleSignupSubmit={this.handleSignupSubmit} />
             <h1>SwapCard</h1>
             <h2>A place to trade your unused and unwanted gift cards for retailer you prefer</h2>
             <button className="btn btn-success" onClick={this.handleLogin}>Log in</button>

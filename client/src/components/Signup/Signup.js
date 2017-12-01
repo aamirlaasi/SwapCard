@@ -27,15 +27,24 @@ const Signup = (props) => (
         onRequestClose={props.closeSignup}
         contentLabel="Signup"
     >
-        <div>
-            <legend>New to SwapCard? Sign up!</legend>
+      <div id="signup-modal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div className="modal-dialog">
+          <div className="signupmodal-container">
+              <h1>New to SwapCard? Sign up!</h1>
             <form accept-charset="UTF-8" action="" method="post">
                 <input  name="name" placeholder="Full Name" type="text" />
                 <input  name="username" placeholder="Username" type="text" />
                 <input  name="password" placeholder="Password" type="password" />
-                <button className="btn btn-primary" type="submit">Sign up for WebApp</button>
+                <input
+                  type="submit"
+                  name="signup"
+                  className="signup signupmodal-submit"
+                  value="Sign Up"
+                  onClick={props.handleSignupSubmit}/>
             </form>
         </div>
+      </div>
+      </div>
     </Modal>
 )
 

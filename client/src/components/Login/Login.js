@@ -30,7 +30,7 @@ const Login = (props) => (
         <div className="modal-dialog">
             <div className="loginmodal-container">
                 <h1>Login to Your Account</h1>
-                <form>
+                <form method="post">
                 <input type="text" name="user" placeholder="Username" />
                 <input type="password" name="pass" placeholder="Password" />
                 <input type="submit" name="login" className="login loginmodal-submit" value="Login" />

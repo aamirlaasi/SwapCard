@@ -13,4 +13,8 @@ router
 //   .put(cardsController.update)
 //   .delete(cardsController.remove);
 
+router
+  .route("/email")
+  .get(cardsController.notify)
+  
 module.exports = router;

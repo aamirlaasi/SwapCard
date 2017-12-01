@@ -1,4 +1,5 @@
 const db = require("../models");
+const notify = require("./email.js");
 
 // Defining methods for the booksController
 module.exports = {
@@ -15,6 +16,8 @@ module.exports = {
     .findById(req.params.id)
     .then(dbModel => res.send(dbModel))
     .catch(err => res.status(422).json(err));
+  },
+  notify: function() {
+    notify();
   }
-
 };

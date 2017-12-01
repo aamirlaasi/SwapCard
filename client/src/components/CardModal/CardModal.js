@@ -20,7 +20,10 @@ const style = {
   };
 
 class CardModal extends Component {
-
+    notifyOwner(e) {
+        e.preventDefault();
+        alert(this.props.email);
+    }
     render() {
         return(
             <Modal style={style}
@@ -35,28 +38,29 @@ class CardModal extends Component {
                                 <div className="img-container text-center col-lg-7" onClick={this.props.loadModal}>
                                     <img alt={this.props.store} src={this.props.fimage} />
                                 </div>
-            
-                                <div className="cardDetail col-lg-5">
-                                    <ul>
-                                        <li>
-                                        <strong>Owner:</strong> {this.props.owner}
-                                        </li>
-                                        <li>
-                                        <strong>User rating: 5</strong>
-                                        </li>
-                                        <li>
-                                        <strong>Store:</strong> {this.props.store}
-                                        </li>
-                                        <li>
-                                        <strong>Price:</strong> {this.props.price}
-                                        </li>
-                                        <li>
-                                        <strong>ExpDate:</strong> {this.props.exp}
-                                        </li>
-                                    </ul>
-                                    <button style={{"marginRight": "20px"}} className="btn btn-success" onClick={this.props.handleTrade}>Notify Owner</button>
-                                    <button className="btn btn-danger" onClick={this.props.closeModal}>Close</button>
-                                </div>
+                                <form>
+                                    <div className="cardDetail col-lg-5">
+                                        <ul>
+                                            <li>
+                                            <strong>Owner:</strong> {this.props.owner}
+                                            </li>
+                                            <li>
+                                            <strong>User rating: 5</strong>
+                                            </li>
+                                            <li>
+                                            <strong>Store:</strong> {this.props.store}
+                                            </li>
+                                            <li>
+                                            <strong>Price:</strong> {this.props.price}
+                                            </li>
+                                            <li>
+                                            <strong>ExpDate:</strong> {this.props.exp}
+                                            </li>
+                                        </ul>
+                                        <button style={{"marginRight": "20px"}} className="btn btn-success" onClick={this.notifyOwner.bind(this)}>Notify Owner</button>
+                                        <button className="btn btn-danger" onClick={this.props.closeModal}>Close</button>
+                                    </div>
+                                </form>
                                 <hr /> 
                             </div>
                             <hr />

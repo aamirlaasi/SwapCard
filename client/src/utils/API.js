@@ -8,5 +8,8 @@ export default {
   //Choose specified card
   chooseCard: function(id) {
     return axios.get("/api/cards/" + id);
+  },
+  notify: function() {
+    return axios.get("/api/cards/email");
   }
 };

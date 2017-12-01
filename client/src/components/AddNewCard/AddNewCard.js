@@ -50,7 +50,13 @@ class AddNewCard extends Component {
             back: imageBack,
         })
     }; 
-  
+    
+    //get card details, store in database
+    formSubmit = (e) => {
+        e.preventDefault();
+        const name = e.target.elements.store.value;
+        console.log(name);
+    }
 
     render() {
         return(
@@ -62,10 +68,10 @@ class AddNewCard extends Component {
                 <div>
                     <h2>Take picture of front and back, input card details</h2>
                     <hr />
-                    <form>
+                    <form onSubmit={this.formSubmit}>
                         <div className="row">
                             <div className="col-lg-2">
-                                <input type="text" className="form-group"  placeholder="Store name" required/>
+                                <input type="text" className="form-group" name="store"  placeholder="Store name" required/>
                             </div>
                             <div className="col-lg-2">
                                 <input type="text" className="form-group"  placeholder="Price" required/>

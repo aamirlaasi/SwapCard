@@ -42,7 +42,7 @@ class Cards extends Component {
     chooseCard = (id) => {
         API.chooseCard(id)
         .then(res => {
-            // console.log(res);
+            console.log(res);
             this.loadModal();
             this.setState({cardModal: res.data})
         })
@@ -85,6 +85,7 @@ class Cards extends Component {
                     price={this.state.cardModal.price}
                     exp={this.state.cardModal.exp}
                     owner={this.state.cardModal.owner}
+                    email={this.state.cardModal.email}
                 />
             </div>
         )

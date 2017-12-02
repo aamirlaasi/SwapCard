@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Webcam from 'react-webcam';
-
+import API from "../../utils/API";
 import Modal from "react-modal";
 // import Capture from "../Webcam/Capture";
 import WebcamCapture from "../WebcamCapture"
@@ -54,8 +54,13 @@ class AddNewCard extends Component {
     //get card details, store in database
     formSubmit = (e) => {
         e.preventDefault();
-        const name = e.target.elements.store.value;
-        console.log(name);
+        const store = e.target.elements.store.value;
+        const price = e.target.elements.price.value;
+        const fimage = e.target.elements.fimage.value;
+        // console.log(fimage);
+        const bimage = e.target.elements.bimage.value;
+        const exp = e.target.elements.exp.value;
+        API.addNewCard(store, price, exp, fimage, bimage);
     }
 
     render() {
@@ -74,11 +79,17 @@ class AddNewCard extends Component {
                                 <input type="text" className="form-group" name="store"  placeholder="Store name" required/>
                             </div>
                             <div className="col-lg-2">
-                                <input type="text" className="form-group"  placeholder="Price" required/>
+                                <input type="text" className="form-group" name="price"  placeholder="Price" required/>
                             </div>
                             <div className="col-lg-2">
-                                <input type="text" className="form-group"  placeholder="Exp date" required/>
-                            </div>
+                                <input type="date" className="form-group" name="exp"  placeholder="Exp date" required/>
+                            </div>   
+                            <div className="col-lg-2">
+                                <input type="text" className="form-group" name="fimage"  placeholder="fimage URL" required/>
+                            </div> 
+                            <div className="col-lg-2">
+                                <input type="text" className="form-group" name="bimage"  placeholder="bimage URL" required/>
+                            </div>                          
                         </div>
                         <div className="row">
                             <div className="col-lg-4">
@@ -104,7 +115,7 @@ class AddNewCard extends Component {
                             </div>
                         </div>
                 
-                        {this.state.front && this.state.back ? (
+                        {true ? (
                             <button type="submit">Submit</button>
                         ): <p>Please capture both front and back of card</p>}
                         <button onClick={this.props.unselectAddNewCard}>Cancel</button>

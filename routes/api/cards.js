@@ -19,4 +19,9 @@ router
   .route("/email/:email")
   .get(cardsController.notify)
   
+// Matches with "/api/cards/saveCard:"
+router
+  .route("/addNewCard/:store-:price-:exp-:fimage-:bimage")
+  .post(cardsController.addNewCard)
+
 module.exports = router;

@@ -20,5 +20,8 @@ module.exports = {
   notify: function(req, res) {
     notifyEmail(req.params.email)
     console.log(req.params.email);
+  },
+  addNewCard: function(req,res) {
+    console.log(req.params);
   }
 };

@@ -12,5 +12,9 @@ export default {
   notify: function(email) {
     return axios.get("/api/cards/email/" + email);
     // alert(email);
+  },
+  addNewCard: function(store, price, exp, fimage, bimage) {
+    // console.log(store, price);
+    return axios.post("/api/cards/addNewCard/" + store + "-" + price + "-" + exp + "-" + fimage + "-" +bimage);
   }
 };

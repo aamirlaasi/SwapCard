@@ -24,7 +24,7 @@ class CardModal extends Component {
     notifyOwner(e) {
         e.preventDefault();
         API.notify(this.props.email);
-        // alert(this.props.email);
+        alert(`Email has been sent to the owner`);
     }
     render() {
         return(

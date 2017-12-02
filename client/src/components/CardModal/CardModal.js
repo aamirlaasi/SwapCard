@@ -23,7 +23,7 @@ const style = {
 class CardModal extends Component {
     notifyOwner(e) {
         e.preventDefault();
-        API.notify("leduypc1988@gmail.com");
+        API.notify(this.props.email);
         // alert(this.props.email);
     }
     render() {

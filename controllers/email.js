@@ -2,7 +2,7 @@ console.log("email start");
 const nodemailer = require('nodemailer');
 
 
-notify = () => {
+notifyEmail = (email) => {
     let transportOptions = nodemailer.createTransport({
         service: 'Gmail',
         //port: 587,
@@ -20,7 +20,7 @@ notify = () => {
     let mailOptions = {
         from: '"Swapcard" <swapcardapps@gmail.com>', // sender address
         //from: "test.nodemailer@gmail.com",
-        to: "leduypc1988@gmail.com", // list of receivers
+        to: email, // list of receivers
         subject: "New trade request", // Subject line
         text: "Please login in your acoount to see more", // plain text body
         html: "<a>www.google.com</a>" // html body
@@ -39,4 +39,4 @@ notify = () => {
     });
 }
 
-module.exports = notify;
+module.exports = notifyEmail;

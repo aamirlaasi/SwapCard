@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Modal from "react-modal";
 import Carousel from "../Carousel";
+import API from "../../utils/API";
 import "./CardModal.css";
 const style = {
     content : {
@@ -22,7 +23,8 @@ const style = {
 class CardModal extends Component {
     notifyOwner(e) {
         e.preventDefault();
-        alert(this.props.email);
+        API.notify("leduypc1988@gmail.com");
+        // alert(this.props.email);
     }
     render() {
         return(

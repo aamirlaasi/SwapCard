@@ -1,50 +1,86 @@
 import React, {Component} from "react";
 import "./Header.css";
-import Login from "../Login";
-import Signup from "../Signup";
+import { Button } from 'react-bootstrap';
+import Auth from "../../Auth/Auth.js";
+
+// import Login from "../Login";
+// import Signup from "../Signup";
 import {Link} from "react-router-dom";
 
 class Header extends Component {
-  state = {
-    selectedLogin: undefined
-  }
-  handleLogin = ()=> {
-    this.setState({
-      selectedLogin:true
-    })
-  }
-  closeLogin = ()=> {
-    this.setState({
-      selectedLogin:false
-    })
-  }
-  handleSignup = ()=> {
-    this.setState({
-      selectedSignup:true
-    })
-  }
-  // handleSignupSubmit = event => {
-  //   event.preventDefault();
-  //   API.saveBook({
-  //     title: this.state.title,
-  //     author: this.state.author,
-  //     synopsis: this.state.synopsis
+  // state = {
+  //   selectedLogin: undefined
+  // }
+  // handleLogin = ()=> {
+  //   this.setState({
+  //     selectedLogin:true
   //   })
   // }
-  closeSignup = ()=> {
-    this.setState({
-      selectedSignup:false
-    })
+  // closeLogin = ()=> {
+  //   this.setState({
+  //     selectedLogin:false
+  //   })
+  // }
+  // handleSignup = ()=> {
+  //   this.setState({
+  //     selectedSignup:true
+  //   })
+  // }
+
+  // closeSignup = ()=> {
+  //   this.setState({
+  //     selectedSignup:false
+  //   })
+  // }
+
+  constructor(props) {
+        super(props)
+        this.auth = new Auth();
+    }
+
+  login() {
+    this.auth.login();
   }
+
+  logout() {
+    this.auth.logout();
+  }
+
   render() {
+    // const { isAuthenticated } = this.props.auth;
+
     return (
         <div className="jumbotron text-center">
-            <Login closeLogin={this.closeLogin} handleLogin={this.state.selectedLogin} />
-            <Signup closeSignup={this.closeSignup} handleSignup={this.state.selectedSignup} handleSignupSubmit={this.handleSignupSubmit} />
+            {/* <Login closeLogin={this.closeLogin} handleLogin={this.state.selectedLogin} /> */}
+            {/* <Signup closeSignup={this.closeSignup} handleSignup={this.state.selectedSignup} handleSignupSubmit={this.handleSignupSubmit} /> */}
             <h1>SwapCard</h1>
             <h2>A place to trade your unused and unwanted gift cards for retailer you prefer</h2>
-            <button className="btn btn-success" onClick={this.handleLogin}>Log in</button>
-            <button className="btn btn-danger" onClick={this.handleSignup}>Sign up</button>
+            {
+              !this.auth.isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.login.bind(this)}
+                  >
+                    Log In / Sign-up
+                  </Button>
+                )
+            }
+            {console.log(this)}
+            {
+              this.auth.isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.logout.bind(this)}
+                  >
+                    Log Out
+                  </Button>
+                )
+            }
+
+            {/* <button className="btn btn-success" onClick={this.handleLogin}>Log in</button> */}
+            {/* <button className="btn btn-danger" onClick={this.handleSignup}>Sign up</button> */}
         </div>
     )
   }

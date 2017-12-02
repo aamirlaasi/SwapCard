@@ -66,7 +66,7 @@ class Header extends Component {
                   </Button>
                 )
             }
-            {console.log(this)}
+            {console.log(this.auth)}
             {
               this.auth.isAuthenticated() && (
                   <Button

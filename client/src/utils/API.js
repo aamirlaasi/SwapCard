@@ -14,7 +14,7 @@ export default {
     // alert(email);
   },
   addNewCard: function(store, price, exp, fimage, bimage) {
-    // console.log(store, price);
+    console.log(store, price, exp, fimage, bimage);
     return axios.post("/api/cards/addNewCard/" + store + "-" + price + "-" + exp + "-" + fimage + "-" +bimage);
   }
 };

@@ -59,7 +59,8 @@ class AddNewCard extends Component {
         const fimage = e.target.elements.fimage.value;
         // console.log(fimage);
         const bimage = e.target.elements.bimage.value;
-        const exp = e.target.elements.exp.value;
+        let exp = JSON.stringify(e.target.elements.exp.value);
+        exp = exp.replace(/-/g, ".")
         API.addNewCard(store, price, exp, fimage, bimage);
     }
 

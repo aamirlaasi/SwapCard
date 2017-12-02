@@ -23,7 +23,7 @@ notifyEmail = (email) => {
         to: email, // list of receivers
         subject: "New trade request", // Subject line
         text: "Please login in your acoount to see more", // plain text body
-        html: "<a>www.google.com</a>" // html body
+        html: "<a href='www.google.com'>You've got an message. Log in to Swapcard to see</a>" // html body
     };
     
     // send mail with defined transport object

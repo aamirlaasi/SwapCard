@@ -43,6 +43,9 @@ class UserProfile extends Component {
                             <p>Name: </p>
                             <p>Email Address: </p>
                         </div>
+                        <div className="col-lg-5">
+                            <p>You've got an order </p>
+                        </div>
                     </div>
                     <h2>Cards Control</h2>
                     <hr />

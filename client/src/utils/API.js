@@ -9,7 +9,8 @@ export default {
   chooseCard: function(id) {
     return axios.get("/api/cards/" + id);
   },
-  notify: function() {
-    return axios.get("/api/cards/email");
+  notify: function(email) {
+    return axios.get("/api/cards/email/" + email);
+    // alert(email);
   }
 };

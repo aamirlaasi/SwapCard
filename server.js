@@ -35,22 +35,19 @@ mongoose.connect(
 // .catch(function(err) {
 //   console.log(err.message);
 // });
+// Finding the users cards and trasefer it into the Card collection to show them on the home page 
+// finding all of the users
 db.User.find({},function(err,users){
   if(err){console.log(err)}
     else{
-       
-      // for(var i = 0;i<users.length;i++){
-      //   console.log(users[i].fullname);
-      // }
-    // users.forEach(function(user){
-    //   console.log(user.fullname)
-
-    // })
-    
-    users.forEach(function(user){
+      // loop through the users and look for them gift cards
+      users.forEach(function(user){
+        // adding the owner and email
+      email = user.email
       owner=user.fullname
       user.giftcard.forEach(function(item){
         item.owner=owner;
+        item.email=email;
         db.Card.collection.insert(item).then(function(data){
          console.log(data.insertedIds.length + " records inserted!");
         })

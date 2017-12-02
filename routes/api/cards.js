@@ -13,8 +13,10 @@ router
 //   .put(cardsController.update)
 //   .delete(cardsController.remove);
 
+// Matches with "/api/cards/email/:email"
+
 router
-  .route("/email")
+  .route("/email/:email")
   .get(cardsController.notify)
   
 module.exports = router;

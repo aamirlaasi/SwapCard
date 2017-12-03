@@ -23,5 +23,7 @@ module.exports = {
   },
   findByEmail : function(req, res) {
     db.User.find({email:req.params.email})
-  }
+  },
+  addNewCard: function(req,res) {
+    console.log(req.params);
 };

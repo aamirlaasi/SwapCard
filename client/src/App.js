@@ -27,13 +27,8 @@ const App = () =>
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);
         console.log(props);
-        return <UserProfile {...props} />
+        return <UserProfile {...props}/>
       }}/>
-      {/* <Route path="/callback" render={(props) => {
-        handleAuthentication(props);
-        console.log(props);
-        return <Callback {...props} />
-      }}/> */}
     </Switch>
   </div>
 </Router>;

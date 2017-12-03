@@ -23,4 +23,10 @@ router
   .route("/userProfile/email/:email")
   .get(cardsController.findByEmail)
 
+  
+// Matches with "/api/cards/saveCard:"
+router
+  .route("/addNewCard/:store-:price-:exp-:fimage-:bimage")
+  .post(cardsController.addNewCard)
+
 module.exports = router;

@@ -20,5 +20,8 @@ module.exports = {
   notify: function(req, res) {
     notifyEmail(req.params.email)
     console.log(req.params.email);
+  },
+  findByEmail: function(req, res) {
+    db.User.find({email:req.params.email})
   }
 };

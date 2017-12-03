@@ -18,5 +18,9 @@ router
 router
   .route("/email/:email")
   .get(cardsController.notify)
-  
+
+router
+  .route("/userProfile/email/:email")
+  .get(cardsController.findByEmail)
+
 module.exports = router;

@@ -12,5 +12,8 @@ export default {
   notify: function(email) {
     return axios.get("/api/cards/email/" + email);
     // alert(email);
+  },
+  userProfile: function(email) {
+    return axios.get("/api/userProfile/email/" + email)
   }
 };

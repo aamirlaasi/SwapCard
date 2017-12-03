@@ -15,6 +15,7 @@ const auth = new Auth();
 const handleAuthentication = (nextState, replace) => {
   if (/access_token|id_token|error/.test(nextState.location.hash)) {
     auth.handleAuthentication();
+    console.log(localStorage.getItem('profile'));
   }
 }
 
@@ -23,12 +24,16 @@ const App = () =>
   <div>
     <Switch>
       <Route exact path="/" component={Cards} />
-      <Route exact path="/UserProfile" component={UserProfile} />
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);
         console.log(props);
-        return <Callback {...props} />
+        return <UserProfile {...props} />
       }}/>
+      {/* <Route path="/callback" render={(props) => {
+        handleAuthentication(props);
+        console.log(props);
+        return <Callback {...props} />
+      }}/> */}
     </Switch>
   </div>
 </Router>;

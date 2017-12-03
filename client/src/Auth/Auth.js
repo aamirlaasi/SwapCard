@@ -32,13 +32,20 @@ export default class Auth {
         }));
         console.log(authResult);
         console.log(authResult.idTokenPayload.name);
-        return authResult.idTokenPayload.name;
+        // Sets the Auth0 User Profile as a JSON object called 'profile'
+        localStorage.setItem('profile', authResult.idTokenPayload.name);
+        console.log("Auth0 Profile name: ");
+        console.log(localStorage.getItem('profile'));
       } else if (err) {
         history.replace('/home');
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
     });
+  }
+
+  getUser() {
+
   }
 
   setSession(authResult) {

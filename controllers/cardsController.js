@@ -26,4 +26,5 @@ module.exports = {
   },
   addNewCard: function(req,res) {
     console.log(req.params);
-};
+  }
+}

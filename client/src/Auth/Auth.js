@@ -28,8 +28,8 @@ export default class Auth {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
         history.replace('/');
-        console.log(this.auth0.client.userInfo(authResult.accessToken, function(err, user) {
-        }));
+        // console.log(this.auth0.client.userInfo(authResult.accessToken, function(err, user) {
+        // }));
         // console.log(authResult);
         // console.log(authResult.idTokenPayload.name);
         // Sets the Auth0 User Profile as a JSON object called 'profile'

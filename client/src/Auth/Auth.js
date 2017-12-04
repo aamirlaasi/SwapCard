@@ -27,7 +27,7 @@ export default class Auth {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        history.replace('/home');
+        history.replace('/');
         console.log(this.auth0.client.userInfo(authResult.accessToken, function(err, user) {
         }));
         console.log(authResult);
@@ -37,7 +37,7 @@ export default class Auth {
         console.log("Auth0 Profile name: ");
         console.log(localStorage.getItem('profile'));
       } else if (err) {
-        history.replace('/home');
+        history.replace('/');
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
@@ -54,8 +54,8 @@ export default class Auth {
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
-    // navigate to the home route
-    history.replace('/home');
+    // navigate to the root route
+    history.replace('/');
   }
 
   logout() {
@@ -63,7 +63,7 @@ export default class Auth {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
-    // navigate to the home route
+    // navigate to the root route
     history.replace('/');
   }
 

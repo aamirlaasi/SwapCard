@@ -13,8 +13,8 @@ export default {
     return axios.get("/api/cards/email/" + email);
     // alert(email);
   },
-  userProfile: function(email) {
-    return axios.get("/api/userProfile/email/" + email)
+  getUserProfile: function(email) {
+    return axios.get("/api/cards/userProfile/" + email);
   },
   addNewCard: function(store, price, exp, fimage, bimage) {
     console.log(store, price, exp, fimage, bimage);

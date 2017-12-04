@@ -42,7 +42,7 @@ class Cards extends Component {
     chooseCard = (id) => {
         API.chooseCard(id)
         .then(res => {
-            console.log(res);
+            // console.log(res);
             this.loadModal();
             this.setState({cardModal: res.data})
         })

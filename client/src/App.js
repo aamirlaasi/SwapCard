@@ -27,7 +27,7 @@ const App = () =>
       <Route exact path="/" component={Cards} />
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);
-        console.log(props);
+        // console.log(props);
         return <User {...props}/>
       }}/>
     </Switch>

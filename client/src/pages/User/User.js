@@ -1,11 +1,9 @@
 import React, {Component} from "react";
-import UserProfile from "../../components/UserProfile"
+import UserProfile from "../../components/UserProfile";
+// import API from "../../utils/API";
 
 class User extends Component {
-    componentDidMount() {
-        console.log("This is from Pages/User component");
-        console.log(localStorage.getItem("profile"));
-    }
+ 
     render() {
         return(
             <UserProfile />

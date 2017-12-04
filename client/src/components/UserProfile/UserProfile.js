@@ -43,8 +43,11 @@ class UserProfile extends Component {
                 <div className="jumbotron text-center">
                     <h1>SwapCard Dashboard</h1>
                     {/* creat button to test userprofile page route */}
-                    <button className={window.location.pathname === "/" ? "active" : ""}>
+                    {/* <button className={window.location.pathname === "/" ? "active" : ""}>
                         <Link to="/">Back to homepage</Link>
+                    </button> */}
+                    <button className={localStorage.getItem("profile") ? "active" : ""}>
+                        <Link to="/">Logout</Link>
                     </button>
                 </div>
                 {/* end header */}

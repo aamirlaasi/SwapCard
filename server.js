@@ -1,3 +1,5 @@
+// import { exists } from "fs";
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -44,13 +46,21 @@ db.User.find({},function(err,users){
       users.forEach(function(user){
         // adding the owner and email
       email = user.email
-      owner=user.fullname
+      owner=user.fullname 
       user.giftcard.forEach(function(item){
         item.owner=owner;
         item.email=email;
-        db.Card.collection.insert(item).then(function(data){
-         console.log(data.insertedIds.length + " records inserted!");
-        })
+        // to prevent the card from Duplicate
+        if(!item.stored){
+          item.stored = true;
+      db.User.update({"fullname":owner , "giftcard.stored":false} , {$set: {"giftcard.$.stored": true}},{multi:true},function(err){
+        if(err)throw(err);
+      });
+      db.Card.collection.insert(item).then(function(data){
+          console.log(data.insertedIds.length + " records inserted!");
+          console.log("________________________________");
+        });
+      };
       });
 
       // console.log(cards);

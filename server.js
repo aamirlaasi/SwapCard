@@ -1,3 +1,5 @@
+// import { exists } from "fs";
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -12,10 +14,14 @@ const PORT = process.env.PORT || 3001;
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// Serve up static assets
-app.use(express.static("client/build"));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 // Add routes, both API and view
 app.use(routes);
+// Serve up static assets
+app.use(express.static("client/build"));
 
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
@@ -44,13 +50,21 @@ db.User.find({},function(err,users){
       users.forEach(function(user){
         // adding the owner and email
       email = user.email
-      owner=user.fullname
+      owner=user.fullname 
       user.giftcard.forEach(function(item){
         item.owner=owner;
         item.email=email;
-        db.Card.collection.insert(item).then(function(data){
-         console.log(data.insertedIds.length + " records inserted!");
-        })
+        // to prevent the card from Duplicate
+        if(!item.stored){
+          item.stored = true;
+      db.User.update({"fullname":owner , "giftcard.stored":false} , {$set: {"giftcard.$.stored": true}},{multi:true},function(err){
+        if(err)throw(err);
+      });
+      db.Card.collection.insert(item).then(function(data){
+          console.log(data.insertedIds.length + " records inserted!");
+          console.log("________________________________");
+        });
+      };
       });
 
       // console.log(cards);

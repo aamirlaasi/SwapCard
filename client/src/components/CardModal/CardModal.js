@@ -21,6 +21,16 @@ const style = {
   };
 
 class CardModal extends Component {
+    state = {
+        cardPrice: ""
+    }
+
+    componentDidMount() {
+        this.setState({
+            cardPrice: this.props.price
+        });
+    }
+
     notifyOwner(e) {
         e.preventDefault();
         API.notify(this.props.email);
@@ -69,7 +79,7 @@ class CardModal extends Component {
                             {/* Card that user have */}
                             <div className="row">
                                  <h3>Your cards (which has same price to the above card)</h3>
-                                {true ? <Carousel /> : "Please login or create accout to trade card"}
+                                {true ? <Carousel sameprice={this.state.cardPrice} /> : "Please login or create accout to trade card"}
                             </div>                
                         </div>
                     </Modal>

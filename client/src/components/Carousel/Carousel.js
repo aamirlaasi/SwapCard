@@ -34,10 +34,10 @@ class Carousel extends Component {
                         <img src="https://www.paypal-gifts.com/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/t/o/toysrus_card_xxlweb.png" alt="sometext"/>
                     </div> */}
                     { this.state.cards.length>0 ? (
-                        this.state.cards.map(card => {
+                        this.state.cards.map((card, index) => {
                             return(
-                                <div className="slide">
-                                    <img src={card.fimage} alt="sometext"/>
+                                <div className="slide" key={index}>
+                                    <img src={card.fimage} alt={index}/>
                                     <button onClick={()=>{this.removeCard(card.store)}}>Remove</button>                                    
                                 </div>
                                 

@@ -44,10 +44,6 @@ export default class Auth {
     });
   }
 
-  getUser() {
-
-  }
-
   setSession(authResult) {
     // Set the time that the access token will expire at
     let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
@@ -59,6 +55,10 @@ export default class Auth {
   }
 
   logout() {
+    this.auth0.logout({
+      returnTo: 'http://localhost:3000/',
+      client_id: AUTH_CONFIG.clientId
+    });
     // Clear access token and ID token from local storage
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');

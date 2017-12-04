@@ -54,8 +54,8 @@ class UserProfile extends Component {
                     {/* your information */}
                     <div className="row">
                         <div className="col-lg-5">
-                            <p>Name: {this.state.fullname} </p>
-                            <p>Email Address: {this.state.email} </p>
+                            <p><strong>Name:</strong> {this.state.fullname} </p>
+                            <p><strong>Email Address:</strong> {this.state.email} </p>
                         </div>
                         {/* <div className="col-lg-5">
                             <p>You've got an order </p>
@@ -66,7 +66,7 @@ class UserProfile extends Component {
                     <div className="row">
                         <div>
                             <button className="btn btn-success" onClick={this.selectAddNewCard} >Add new Card</button>
-                            <button className="btn btn-danger">Click on card to remove</button>
+                            {/* <button className="btn btn-danger">Click on card to remove</button> */}
                         </div>
                         <div>
                             <Carousel cards={this.props.cards} />

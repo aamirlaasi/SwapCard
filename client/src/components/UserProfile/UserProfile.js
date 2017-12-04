@@ -66,7 +66,7 @@ class UserProfile extends Component {
                     <div className="row">
                         <div>
                             <button className="btn btn-success" onClick={this.selectAddNewCard} >Add new Card</button>
-                            <button className="btn btn-danger">Click on card to remove</button>
+                            {/* <button className="btn btn-danger">Click on card to remove</button> */}
                         </div>
                         <div>
                             <Carousel cards={this.props.cards} />

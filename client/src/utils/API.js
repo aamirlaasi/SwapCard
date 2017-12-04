@@ -3,6 +3,7 @@ import axios from "axios";
 export default {
   // Gets all cards
   getCards: function() {
+    // console.log( axios.get("/api/cards"));
     return axios.get("/api/cards");
   },
   //Choose specified card
@@ -14,7 +15,8 @@ export default {
     // alert(email);
   },
   getUserProfile: function(email) {
-    return axios.get("/api/cards/userProfile/" + email);
+    console.log(axios.get("/api/cards/userProfile/" + email));
+   return axios.get("/api/cards/userProfile/" + email);
   },
   addNewCard: function(store, price, exp, fimage, bimage) {
     console.log(store, price, exp, fimage, bimage);

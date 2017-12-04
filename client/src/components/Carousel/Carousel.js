@@ -13,13 +13,12 @@ class Carousel extends Component {
     }
     // load user cards from database
     loadProfile() {
-        console.log("This is from Carousel component: " + localStorage.getItem("profile"));
-        API.getUserProfile(localStorage.getItem("profile"))
+        let email = localStorage.getItem("profile");
+        console.log("Extract email from Carousel component: " + email);
+        API.getUserProfile(email)
         .then(res => {
-            console.log(`From Carousel : ${res}`);
-        })
-        .catch(err => {console.log(err);});
-        ;
+            console.log(`From Carousel : ${res.data}`);
+        });
     }
 
     render() {

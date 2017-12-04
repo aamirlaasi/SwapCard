@@ -13,6 +13,9 @@ export default {
     return axios.get("/api/cards/email/" + email);
     // alert(email);
   },
+  userProfile: function(email) {
+    return axios.get("/api/userProfile/email/" + email)
+  },
   addNewCard: function(store, price, exp, fimage, bimage) {
     console.log(store, price, exp, fimage, bimage);
     return axios.post("/api/cards/addNewCard/" + store + "-" + price + "-" + exp + "-" + fimage + "-" + bimage);

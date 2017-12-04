@@ -21,10 +21,12 @@ module.exports = {
     notifyEmail(req.params.email)
     console.log(req.params.email);
   },
-  findByEmail : function(req, res) {
+<<<<<<< HEAD
+  findByEmail: function(req, res) {
     db.User.find({email:req.params.email})
-  },
+=======
   addNewCard: function(req,res) {
     console.log(req.params);
+>>>>>>> 6bed33112bc4023384e8dd5dda5150d7d1e0b809
   }
-}
+};

@@ -9,7 +9,7 @@ export default class Auth {
     redirectUri: AUTH_CONFIG.callbackUrl,
     audience: `https://${AUTH_CONFIG.domain}/userinfo`,
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'openid profile'
   });
 
   constructor() {
@@ -28,12 +28,24 @@ export default class Auth {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
         history.replace('/home');
+        console.log(this.auth0.client.userInfo(authResult.accessToken, function(err, user) {
+        }));
+        console.log(authResult);
+        console.log(authResult.idTokenPayload.name);
+        // Sets the Auth0 User Profile as a JSON object called 'profile'
+        localStorage.setItem('profile', authResult.idTokenPayload.name);
+        console.log("Auth0 Profile name: ");
+        console.log(localStorage.getItem('profile'));
       } else if (err) {
         history.replace('/home');
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
     });
+  }
+
+  getUser() {
+
   }
 
   setSession(authResult) {
@@ -52,7 +64,7 @@ export default class Auth {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
     // navigate to the home route
-    history.replace('/home');
+    history.replace('/');
   }
 
   isAuthenticated() {
@@ -61,4 +73,6 @@ export default class Auth {
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }
+
+
 }

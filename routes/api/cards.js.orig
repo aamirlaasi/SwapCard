@@ -18,15 +18,17 @@ router
 router
   .route("/email/:email")
   .get(cardsController.notify)
+<<<<<<< HEAD
 
 router
   .route("/userProfile/email/:email")
   .get(cardsController.findByEmail)
-
+=======
   
 // Matches with "/api/cards/saveCard:"
 router
   .route("/addNewCard/:store-:price-:exp-:fimage-:bimage")
   .post(cardsController.addNewCard)
+>>>>>>> 6bed33112bc4023384e8dd5dda5150d7d1e0b809
 
 module.exports = router;

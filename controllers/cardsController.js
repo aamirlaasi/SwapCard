@@ -18,11 +18,20 @@ module.exports = {
     .catch(err => res.status(422).json(err));
   },
   notify: function(req, res) {
-    notifyEmail(req.params.email)
-    console.log(req.params.email);
+    notifyEmail(req.params.email);
+    // console.log(req.params.email);
   },
-  findByEmail : function(req, res) {
-    db.User.find({email:req.params.email})
+  findByEmail: function(req, res) {
+    // console.log("from controller:" + req.params.email)
+    db.User
+    .find({email:req.params.email})
+    .then(dbUserProfile => {
+      // dbUserProfile = JSON.stringify(dbUserProfile[0]);
+      console.log(dbUserProfile[0]);      
+      res.send(dbUserProfile[0]);
+      })
+    .catch(err => res.status(422).json(err));
+    
   },
   addNewCard: function(req,res) {
     console.log(req.params);

@@ -55,7 +55,7 @@ class UserProfile extends Component {
                             <button className="btn btn-danger">Click on card to remove</button>
                         </div>
                         <div>
-                            <Carousel />
+                            <Carousel cards={this.props.cards} />
                         </div>
                     </div>
                 </div>

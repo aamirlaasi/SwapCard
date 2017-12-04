@@ -19,8 +19,10 @@ router
   .route("/email/:email")
   .get(cardsController.notify)
 
+// Matches with "/api/cards/userProfile/:email"
+
 router
-  .route("/userProfile/email/:email")
+  .route("/userProfile/:email")
   .get(cardsController.findByEmail)
 
   

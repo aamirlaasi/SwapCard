@@ -30,12 +30,12 @@ export default class Auth {
         history.replace('/');
         console.log(this.auth0.client.userInfo(authResult.accessToken, function(err, user) {
         }));
-        console.log(authResult);
-        console.log(authResult.idTokenPayload.name);
+        // console.log(authResult);
+        // console.log(authResult.idTokenPayload.name);
         // Sets the Auth0 User Profile as a JSON object called 'profile'
         localStorage.setItem('profile', authResult.idTokenPayload.name);
-        console.log("Auth0 Profile name: ");
-        console.log(localStorage.getItem('profile'));
+        // console.log("Auth0 Profile name: ");
+        // console.log(localStorage.getItem('profile'));
       } else if (err) {
         history.replace('/');
         console.log(err);

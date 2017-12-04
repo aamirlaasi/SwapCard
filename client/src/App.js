@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Cards from "./pages/Cards";
-import UserProfile from "./components/UserProfile";
+// import UserProfile from "./components/UserProfile";
 import Auth from './Auth/Auth';
+import User from "./pages/User";
 // import Callback from './Callback/Callback';
 
 
@@ -27,7 +28,7 @@ const App = () =>
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);
         console.log(props);
-        return <UserProfile {...props}/>
+        return <User {...props}/>
       }}/>
     </Switch>
   </div>

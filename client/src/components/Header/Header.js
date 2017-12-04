@@ -5,7 +5,7 @@ import Auth from "../../Auth/Auth.js";
 
 // import Login from "../Login";
 // import Signup from "../Signup";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 class Header extends Component {
   // state = {

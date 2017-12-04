@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Cards from "./pages/Cards";
 import UserProfile from "./components/UserProfile";
 import Auth from './Auth/Auth';
-import Callback from './Callback/Callback';
+// import Callback from './Callback/Callback';
 
 
 // const App = () =>
@@ -15,7 +15,7 @@ const auth = new Auth();
 const handleAuthentication = (nextState, replace) => {
   if (/access_token|id_token|error/.test(nextState.location.hash)) {
     auth.handleAuthentication();
-    console.log(localStorage.getItem('profile'));
+    console.log("From App.js: " + localStorage.getItem('profile'));
   }
 }
 

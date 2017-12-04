@@ -2,14 +2,28 @@ import React, {Component} from "react";
 import "./UserProfile.css";
 // import Header from "../Header";
 import { Link } from "react-router-dom";
-// import API from "../../utils/API";
+import API from "../../utils/API";
 import Carousel from "../Carousel";
 import AddNewCard from "../AddNewCard";
 
 class UserProfile extends Component {
     state = {
+        fullname: "",
+        email: "",
         selectAddNewCard: undefined
     }
+
+    componentDidMount() {
+        API.getUserProfile(localStorage.getItem("profile"))
+        .then(res => {
+            // console.log(res.data);
+            this.setState({
+                fullname: res.data.fullname,                
+                email: res.data.email
+            })
+        }
+        ).catch(err => console.log(err));
+    };
 
     selectAddNewCard = () => {
         this.setState({
@@ -40,12 +54,12 @@ class UserProfile extends Component {
                     {/* your information */}
                     <div className="row">
                         <div className="col-lg-5">
-                            <p>Name: </p>
-                            <p>Email Address: </p>
+                            <p>Name: {this.state.fullname} </p>
+                            <p>Email Address: {this.state.email} </p>
                         </div>
-                        <div className="col-lg-5">
+                        {/* <div className="col-lg-5">
                             <p>You've got an order </p>
-                        </div>
+                        </div> */}
                     </div>
                     <h2>Cards Control</h2>
                     <hr />

@@ -15,7 +15,7 @@ export default {
     // alert(email);
   },
   getUserProfile: function(email) {
-    console.log(axios.get("/api/cards/userProfile/" + email));
+    // console.log(axios.get("/api/cards/userProfile/" + email));
    return axios.get("/api/cards/userProfile/" + email);
   },
   addNewCard: function(store, price, exp, fimage, bimage) {

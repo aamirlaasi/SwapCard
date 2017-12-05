@@ -1,17 +1,26 @@
 import React, {Component} from "react";
 import "./UserProfile.css";
 // import Header from "../Header";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import Carousel from "../Carousel";
 import AddNewCard from "../AddNewCard";
+import Auth from "../../Auth/Auth.js";
 
 class UserProfile extends Component {
+    constructor(props) {
+        super(props)
+        this.auth = new Auth();
+    }
     state = {
         fullname: "",
         email: "",
         selectAddNewCard: undefined
     }
+    
+    logout() {
+        this.auth.logout();
+      }
 
     componentDidMount() {
         API.getUserProfile(localStorage.getItem("profile"))
@@ -46,9 +55,11 @@ class UserProfile extends Component {
                     {/* <button className={window.location.pathname === "/" ? "active" : ""}>
                         <Link to="/">Back to homepage</Link>
                     </button> */}
-                    <button className={localStorage.getItem("profile") ? "active" : ""}>
+                    {/* <button className={localStorage.getItem("profile") ? "active" : ""}>
                         <Link to="/">Logout</Link>
-                    </button>
+                    </button> */}
+
+                    <button onClick={this.logout}> Logout </button>
                 </div>
                 {/* end header */}
                 <div className="container">

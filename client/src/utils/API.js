@@ -21,5 +21,8 @@ export default {
   addNewCard: function(store, price, exp, fimage, bimage) {
     // console.log(store, price, exp, fimage, bimage);
     return axios.post("/api/cards/addNewCard/" + store + "-" + price + "-" + exp + "-" + fimage + "-" + bimage);
+  },
+  getTradeCards: function(email) {
+    return axios.get("/api/cards/getTradeCards/" + email);
   }
 };

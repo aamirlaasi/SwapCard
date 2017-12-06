@@ -21,7 +21,7 @@ const cardSeed = [
     bimage: "https://i.colnect.net/f/1247/826/10-Jahre-Starbucks-Deutschland-6078-back.jpg",
     exp: new Date(Date.now()),
     traderEmail:"",
-  
+    
   },
   {
     store: "Walmart",
@@ -42,7 +42,8 @@ const cardSeed = [
   
   },{
     store: "Starbucks",
-    price: 50,
+    price: 10000,
+    chosen: false,
     fimage: "https://www.grovia.com/media/catalog/product/cache/2/image/650x/040ec09b1e35df139433887a97daa66f/s/t/starbucks_giftcard.png",
     email:"duydo@gmail.com",
     bimage: "https://i.colnect.net/f/1247/826/10-Jahre-Starbucks-Deutschland-6078-back.jpg",

@@ -54,7 +54,7 @@ class CardModal extends Component {
                                     <div className="cardDetail col-lg-5">
                                         <ul>
                                             <li>
-                                            <strong>Owner:</strong> {this.props.owner}
+                                            <strong>Owner:</strong> {this.props.email}
                                             </li>
                                             <li>
                                             <strong>User rating: 5</strong>

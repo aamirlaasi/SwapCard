@@ -40,7 +40,9 @@ class Header extends Component {
         return false;
     } else {
         console.log(localStorage.getItem("profile"))
-
+        // this.setState({
+        //   selectedLogin: true
+        // })
         return true;
     }
   }

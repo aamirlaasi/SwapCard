@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import "./Header.css";
 import { Button } from 'react-bootstrap';
 import Auth from "../../Auth/Auth.js";
+import { Link } from "react-router-dom";
+
 
 // import Login from "../Login";
 // import Signup from "../Signup";
@@ -32,6 +34,15 @@ class Header extends Component {
   //     selectedSignup:false
   //   })
   // }
+
+  isLogin() {
+    if(localStorage.getItem("profile")) {
+        return true;
+    } else {
+        console.log(localStorage.getItem("profile"))
+        return false;
+    }
+  }
 
   constructor(props) {
         super(props)
@@ -78,6 +89,9 @@ class Header extends Component {
                   </Button>
                 )
             }
+
+            {this.isLogin() ? <button
+                    className="btn btn-default" ><Link to="/user">Dashboard</Link></button> : <p></p>}
 
             {/* <button className="btn btn-success" onClick={this.handleLogin}>Log in</button> */}
             {/* <button className="btn btn-danger" onClick={this.handleSignup}>Sign up</button> */}

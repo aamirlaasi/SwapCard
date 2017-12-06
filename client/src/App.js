@@ -25,10 +25,13 @@ const App = () =>
   <div>
     <Switch>
       <Route exact path="/" component={Cards} />
+      <Route exact path="/user" render={(props) => {
+        return <User {...props}/>
+      }} />      
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);
         // console.log(props);
-        return <User {...props}/>
+        return <Cards {...props}/>
       }}/>
     </Switch>
   </div>

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./UserProfile.css";
 // import Header from "../Header";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import Carousel from "../Carousel";
 import AddNewCard from "../AddNewCard";
@@ -52,14 +52,14 @@ class UserProfile extends Component {
                 <div className="jumbotron text-center">
                     <h1>SwapCard Dashboard</h1>
                     {/* creat button to test userprofile page route */}
-                    {/* <button className={window.location.pathname === "/" ? "active" : ""}>
+                    <button className={window.location.pathname === "/" ? "active" : ""}>
                         <Link to="/">Back to homepage</Link>
-                    </button> */}
+                    </button>
                     {/* <button className={localStorage.getItem("profile") ? "active" : ""}>
                         <Link to="/">Logout</Link>
                     </button> */}
 
-                    <button onClick={this.logout}> Logout </button>
+                    {/* <button onClick={this.logout}> Logout </button> */}
                 </div>
                 {/* end header */}
                 <div className="container">

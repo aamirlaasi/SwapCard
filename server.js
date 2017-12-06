@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(routes);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("api/client/build"));
 }
 // Serve up static assets
 app.use(express.static("client/build"));

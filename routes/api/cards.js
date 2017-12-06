@@ -17,7 +17,7 @@ router
 
 router
   .route("/email/:email")
-  .get(cardsController.notify)
+  .put(cardsController.notify)
 
 // Matches with "/api/cards/userProfile/:email"
 
@@ -30,5 +30,11 @@ router
 router
   .route("/addNewCard/:store-:price-:exp-:fimage-:bimage")
   .post(cardsController.addNewCard)
+
+// Matches with "/api/cards/saveCard:"
+router
+  .route("/getTradeCard/:email")
+  .get(cardsController.getTradeCard)
+
 
 module.exports = router;

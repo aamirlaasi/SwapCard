@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import Header from "../../components/Header";
 import Card from "../../components/Card";
 import CardModal from "../../components/CardModal";
+import AlertContainer from 'react-alert';
 
 class Cards extends Component {
     state = {
@@ -10,7 +11,21 @@ class Cards extends Component {
         cardModal: [],
         cards: []
     }
-
+    alertOptions = {
+        offset: 14,
+        position: 'top left',
+        theme: 'dark',
+        time: 5000,
+        transition: 'scale'
+      }
+     
+      showAlert = () => {
+        this.msg.show('You need to login first', {
+          time: 2000,
+          type: 'success',
+        //   icon: <img src="path/to/some/img/32x32.png" />
+        })
+      }
     // When the component mounts, load all cards and save them to this.state.cards
     componentDidMount() {
         this.loadCards();
@@ -57,7 +72,12 @@ class Cards extends Component {
             })
             .catch(err => {console.log(err);alert("You might not start the app yet. Run yarn build and try again")});
         } else {
+<<<<<<< HEAD
             alert("Please login or signup before trade");
+=======
+            // alert("Please login or signup before trading");
+            this.showAlert();
+>>>>>>> e42a0ce30abd5488641dd980fc6d4497c9ed7919
         }
         
     }
@@ -98,9 +118,11 @@ class Cards extends Component {
                     store={this.state.cardModal.store}
                     price={this.state.cardModal.price}
                     exp={this.state.cardModal.exp}
-                    owner={this.state.cardModal.owner}
+                    // owner={this.state.cardModal.owner}
                     email={this.state.cardModal.email}
                 />
+                <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
+
             </div>
         )
     }

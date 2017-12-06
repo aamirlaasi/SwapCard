@@ -45,7 +45,11 @@ mongoose.connect(
 // });
 // Finding the users cards and trasefer it into the Card collection to show them on the home page 
 // finding all of the users
+<<<<<<< HEAD
 //app.get("/",function(res,req){}
+=======
+// app.get("/",function(res,req){
+>>>>>>> e42a0ce30abd5488641dd980fc6d4497c9ed7919
 
 
 // db.User.find({},function(err,users){

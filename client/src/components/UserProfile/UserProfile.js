@@ -75,6 +75,15 @@ class UserProfile extends Component {
                             <p>You've got an order </p>
                         </div> */}
                     </div>
+                    {/* Notification start here */}
+                    <hr />                    
+                    <h2>Cards Notification</h2>
+                    <div className="row">
+                        <div className="col-lg-5">
+                            <p>You have notifications</p>
+                        </div>
+                    </div>
+                    {/* end card notification */}
                     <h2>Cards Control</h2>
                     <hr />
                     <div className="row">
@@ -86,8 +95,10 @@ class UserProfile extends Component {
                             <Carousel cards={this.props.cards} />
                         </div>
                     </div>
+                
                 </div>
                 <AddNewCard unselectAddNewCard={this.unselectAddNewCard} selectAddNewCard={this.state.selectAddNewCard}/>
+                           
             </div>
         )
     }

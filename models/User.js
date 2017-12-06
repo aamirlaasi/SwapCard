@@ -31,10 +31,10 @@ var UserSchema = new Schema({
       "Password should be longer."
     ]
   },
-  giftcard: {
-    type: Array,
-    ref:"Card"
-  }
+  // giftcard: {
+  //   type: Array,
+  //   ref:"Card"
+  // }
   // giftcard: [
   //   {
   //     // Store ObjectIds in the array

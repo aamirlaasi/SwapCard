@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 class Header extends Component {
   // state = {
-  //   selectedLogin: undefined
+  //   selectedLogin: false
   // }
   // handleLogin = ()=> {
   //   this.setState({
@@ -36,11 +36,12 @@ class Header extends Component {
   // }
 
   isLogin() {
-    if(localStorage.getItem("profile")) {
-        return true;
+    if(!localStorage.getItem("profile")) {
+        return false;
     } else {
         console.log(localStorage.getItem("profile"))
-        return false;
+
+        return true;
     }
   }
 

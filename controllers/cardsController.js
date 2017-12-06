@@ -6,7 +6,7 @@ const notifyEmail = require("./email.js");
 module.exports = {
   findAll: function(req, res) {
     db.Card
-      .find({chosen: false})
+      .find({})
       .sort({ date: -1 })
       // .then(dbModel => res.json(dbModel))
       .then(dbModel => res.send(dbModel))

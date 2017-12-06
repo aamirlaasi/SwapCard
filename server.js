@@ -75,6 +75,17 @@ db.User.find({},function(err,users){
     // console.log(cards);
   }
 })
+app.post("/api/cards/addNewUser/:email/:username",function(req,res){
+  console.log(req.params);
+  // db.User.create(function(err,data){
+  //   if(err){
+  //     console.log(err);
+  //   }else{
+  //     console.log(data);
+  //   }
+    
+  // })
+})
 
 // Start the API server
 app.listen(PORT, function() {

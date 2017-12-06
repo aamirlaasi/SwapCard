@@ -42,7 +42,7 @@ class Carousel extends Component {
                         <img src="https://www.paypal-gifts.com/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/t/o/toysrus_card_xxlweb.png" alt="sometext"/>
                     </div> */}
                     {console.log(this)}
-                    { this.isLogin() ? (
+                    {(
                         this.state.cards.map((card, index) => {
                             return(
                                 <div className="slide" key={index}>
@@ -52,7 +52,7 @@ class Carousel extends Component {
                                 
                             )
                         })
-                        ) : <p>Loading.....</p> 
+                        ) 
                     }
                 </div>
         )

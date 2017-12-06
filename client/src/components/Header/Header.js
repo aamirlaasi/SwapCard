@@ -59,7 +59,6 @@ class Header extends Component {
 
   render() {
     // const { isAuthenticated } = this.props.auth;
-
     return (
         <div className="jumbotron text-center">
             {/* <Login closeLogin={this.closeLogin} handleLogin={this.state.selectedLogin} /> */}
@@ -91,7 +90,7 @@ class Header extends Component {
             }
 
             {this.isLogin() ? <button
-                    className="btn btn-default" ><Link to="/user">Dashboard</Link></button> : <p></p>}
+                    className="btn btn-warning" ><Link to="/user">Dashboard</Link></button> : <p></p>}
 
             {/* <button className="btn btn-success" onClick={this.handleLogin}>Log in</button> */}
             {/* <button className="btn btn-danger" onClick={this.handleSignup}>Sign up</button> */}

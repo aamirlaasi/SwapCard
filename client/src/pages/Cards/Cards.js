@@ -15,6 +15,14 @@ class Cards extends Component {
     componentDidMount() {
         this.loadCards();
     };
+    autoRefresh() {
+        window.onload = function() {
+            if(!window.location.hash) {
+                window.location = window.location + '#loaded';
+                window.location.reload();
+            }
+        }
+    }
 
     loadCards = () => {
         API.getCards()
@@ -56,6 +64,7 @@ class Cards extends Component {
     }
     
     render() {
+        this.autoRefresh();
         return (
             <div className="row">
                 <Header />

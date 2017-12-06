@@ -9,13 +9,13 @@ class Carousel extends Component {
         cards : []
     }
     
-    isLogin() {
-        if(localStorage.getItem("profile")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // isLogin() {
+    //     if(localStorage.getItem("profile")) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
     componentDidMount() {
         this.loadProfile();
     }

@@ -48,20 +48,25 @@ class Cards extends Component {
 
     // function to query specified card and return modal
     chooseCard = (id) => {
-        API.chooseCard(id)
-        .then(res => {
-            // console.log(res.data);
-            this.loadModal();
-            this.setState({cardModal: res.data})
-        })
-        .catch(err => {console.log(err);alert("You might not start the app yet. Run yarn build and try again")});
+        if(localStorage.getItem("profile")) {
+            API.chooseCard(id)
+            .then(res => {
+                // console.log(res.data);
+                this.loadModal();
+                this.setState({cardModal: res.data})
+            })
+            .catch(err => {console.log(err);alert("You might not start the app yet. Run yarn build and try again")});
+        } else {
+            alert("Please login or signup before trading");
+        }
+        
     }
 
     //handleTrade function
 
-    handleTrade = () => {
-        alert("function in testing");
-    }
+    // handleTrade = () => {
+    //     alert("function in testing");
+    // }
     
     render() {
         this.autoRefresh();

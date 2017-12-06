@@ -37,7 +37,7 @@ const UserSeed = [
   },
   {
     fullname: "Duy Do",
-    email:"duydo@gmail.com",
+    email:"leduypc1988@gmail.com",
     password: "12345",
     userCreated: new Date(Date.now()),
     giftcard:[{
@@ -61,7 +61,7 @@ const UserSeed = [
   
   {
     fullname: "Dan Byers",
-    email:"Dan@gmail.com",
+    email:"dan@gmail.com",
     password: "Danny54321",
     userCreated: new Date(Date.now()),
     giftcard:[{

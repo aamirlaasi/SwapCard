@@ -38,6 +38,9 @@ var cardSchema = new Schema({
   card: {
     type: Schema.Types.ObjectId,
     ref: "Card"
+  },
+  traderEmail:{
+    type:String
   }
 });
 

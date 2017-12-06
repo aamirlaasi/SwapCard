@@ -45,47 +45,41 @@ mongoose.connect(
 // });
 // Finding the users cards and trasefer it into the Card collection to show them on the home page 
 // finding all of the users
-db.User.find({},function(err,users){
-  if(err){console.log(err)}
-    else{
-      // loop through the users and look for them gift cards
-      users.forEach(function(user){
-        // adding the owner and email
-      email = user.email
-      owner=user.fullname 
-      user.giftcard.forEach(function(item){
-        item.owner=owner;
-        item.email=email;
-        // to prevent the card from Duplicate
-        if(!item.stored){
-          item.stored = true;
-      db.User.update({"fullname":owner , "giftcard.stored":false} , {$set: {"giftcard.$.stored": true}},{multi:true},function(err){
-        if(err)throw(err);
-      });
-      db.Card.collection.insert(item).then(function(data){
-          console.log(data.insertedIds.length + " records inserted!");
-          console.log("________________________________");
-        });
-      };
-      });
+app.get("/",function(res,req){
 
-      // console.log(cards);
 
-    })
-    // console.log(cards);
-  }
-})
-app.post("/api/cards/addNewUser/:email/:username",function(req,res){
-  console.log(req.params);
-  // db.User.create(function(err,data){
-  //   if(err){
-  //     console.log(err);
-  //   }else{
-  //     console.log(data);
-  //   }
-    
-  // })
-})
+// db.User.find({},function(err,users){
+//   if(err){console.log(err)}
+//     else{
+//       // loop through the users and look for them gift cards
+//       users.forEach(function(user){
+//         // adding the owner and email
+//       email = user.email
+//       owner=user.fullname 
+//       user.giftcard.forEach(function(item){
+//         item.owner=owner;
+//         item.email=email;
+//         // to prevent the card from Duplicate
+//         if(!item.stored){
+//           item.stored = true;
+//       db.User.update({"fullname":owner , "giftcard.stored":false} , {$set: {"giftcard.$.stored": true}},{multi:true},function(err){
+//         if(err)throw(err);
+//       });
+//       db.Card.collection.insert(item).then(function(data){
+//           console.log(data.insertedIds.length + " records inserted!");
+//           console.log("________________________________");
+//         });
+//       };
+//       });
+
+//       // console.log(cards);
+
+//     })
+//     // console.log(cards);
+//   }
+// })
+// })
+
 
 // Start the API server
 app.listen(PORT, function() {

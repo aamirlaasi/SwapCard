@@ -30,7 +30,8 @@ var cardSchema = new Schema({
   },
   chosen:{
     type:Boolean,
-    default:false 
+    default:false,
+    required :true
   },
   // `card` is an object that stores a card id
   // The ref property links the ObjectId to the card model
@@ -40,7 +41,8 @@ var cardSchema = new Schema({
     ref: "Card"
   },
   traderEmail:{
-    type:String
+    type:String,
+    default:""
   }
 });
 

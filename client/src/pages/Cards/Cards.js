@@ -57,7 +57,7 @@ class Cards extends Component {
             })
             .catch(err => {console.log(err);alert("You might not start the app yet. Run yarn build and try again")});
         } else {
-            alert("Please login or signup before trading");
+            alert("Please login or signup before trade");
         }
         
     }

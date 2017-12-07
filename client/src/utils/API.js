@@ -37,5 +37,8 @@ export default {
   },
   removeCard: function(id) {
     axios.delete("/api/cards/removeCard/" + id);
- }
+ },
+ acceptTrade: function(id) {
+  axios.get("/api/cards/acceptTrade/" + id);
+}
 };

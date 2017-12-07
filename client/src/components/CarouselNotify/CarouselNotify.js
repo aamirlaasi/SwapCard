@@ -12,7 +12,10 @@ class CarouselNotify extends Component {
     componentDidMount() {
         this.loadProfile();
     }
-
+    handleAcceptTrade(id) {
+        API.acceptTrade(id);
+        this.loadProfile();        
+    }
     //function to handlecanceltrade
     handleCancelTrade(id) {
         API.cancelTradeCard(id);
@@ -39,7 +42,7 @@ class CarouselNotify extends Component {
                             return(
                                 <div className="slide" key={index}>
                                     <img src={card.fimage} alt={index}/>
-                                    <button>Click to trade</button>  
+                                    <button onClick={()=>this.handleAcceptTrade(card._id)}>Click to trade</button>  
                                     <button onClick={()=>this.handleCancelTrade(card._id)}>Click to cancel</button>                                                     
                                 </div>
                             )

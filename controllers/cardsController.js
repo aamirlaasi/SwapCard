@@ -83,5 +83,12 @@ module.exports = {
       res.send(card);
       })
     .catch(err => res.status(422).json(err));
-  }
+  },
+  acceptTrade: function(req, res) {
+    db.Card
+    .findOneAndUpdate({ _id: req.params.id })
+    .then(card => res.json(card))
+    .catch(err => res.status(422).json(err));
+    // console.log(req.params.email);
+  },
 }

@@ -31,6 +31,8 @@ const UserSeed = [
     userCreated: new Date(Date.now()),
   }
   ];
+
+  
   
     db.User
     .remove({})

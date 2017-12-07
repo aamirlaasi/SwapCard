@@ -32,18 +32,22 @@ export default {
   getTradeCards: function(email) {
     return axios.get("/api/cards/getTradeCards/" + email);
   },
-  cancelTradeCard: function(id) {
-    axios.get("/api/cards/cancelTradeCard/" + id);
+  cancelTradeCard: function(id, id2) {
+    axios.get("/api/cards/cancelTradeCard/" + id + "-" + id2);
   },
   removeCard: function(id) {
     axios.delete("/api/cards/removeCard/" + id);
   },
- acceptTrade: function(id, traderEmail) {
+  acceptTrade: function(id, traderEmail, id2, email) {
   //  console.log(id);
-    axios.get("/api/cards/acceptTrade/" + id + "-" + traderEmail);
+    axios.get("/api/cards/acceptTrade/" + id + "-" + traderEmail + "-" + id2 + "-" + email);
   },
   ownerGet: function(id, ownerEmail) {
-    console.log(id);
+    // console.log(id);
     axios.get("/api/cards/ownerGet/" + id + "-" + ownerEmail);
+  },
+  getOtherCard: function(email) {
+    return axios.get("/api/cards/otherCard/" + email);
+     
   }
 };

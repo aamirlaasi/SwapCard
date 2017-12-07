@@ -66,6 +66,13 @@ module.exports = {
       res.send(card);
       })
     .catch(err => res.status(422).json(err));
+
+    db.Card
+    .findOneAndUpdate({ _id: req.params.id2 }, {expectedOwner: ""} )
+    .then(card => {
+      res.send(card);
+      })
+    .catch(err => res.status(422).json(err));
   },
   getCardsSamePrice: function(req, res) {
     db.Card
@@ -92,11 +99,27 @@ module.exports = {
       res.send(card);
       })
     .catch(err => res.status(422).json(err));
+
+    db.Card
+    .findOneAndUpdate({ _id: req.params.id2 }, {chosen: false, email: req.params.email, traderEmail: ""} )
+    .then(card => {
+      res.send(card);
+      })
+    .catch(err => res.status(422).json(err));
   },
   ownerGet: function(req, res) {
-    console.log(req.params);
+    // console.log(req.params);
     db.Card
     .findOneAndUpdate({_id: req.params.id}, {expectedOwner: req.params.ownerEmail})
+    .then(card => {
+      res.send(card);
+      })
+    .catch(err => res.status(422).json(err));
+  },
+  getOtherCard: function(req, res) {
+    // console.log(req.params);
+    db.Card
+    .find({expectedOwner: req.params.email})
     .then(card => {
       res.send(card);
       })

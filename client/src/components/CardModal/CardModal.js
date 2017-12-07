@@ -3,6 +3,8 @@ import Modal from "react-modal";
 import Carousel from "../Carousel";
 import API from "../../utils/API";
 import "./CardModal.css";
+import AlertContainer from 'react-alert';
+
 const style = {
     content : {
         position                   : 'absolute',
@@ -25,6 +27,21 @@ class CardModal extends Component {
         cardPrice: ""
     }
 
+    alertOptions = {
+        offset: 14,
+        position: 'top right',
+        theme: 'dark',
+        time: 5000,
+        transition: 'scale'
+      }
+
+      showAlert = () => {
+        this.msg.show('Notification has been sent owner', {
+          time: 1000,
+          type: 'info'
+        })
+      }
+
     componentDidMount() {
         this.setState({
             cardPrice: this.props.price
@@ -34,7 +51,7 @@ class CardModal extends Component {
     notifyOwner(e) {
         e.preventDefault();
         API.notify(this.props.email);
-        alert(`Email has been sent to the owner`);
+        this.showAlert();
     }
     render() {
         return(
@@ -81,7 +98,11 @@ class CardModal extends Component {
                             <div className="row">
                                  <h3>Your cards (which has same price to the above card)</h3>
                                 <Carousel sameprice={this.state.cardPrice} />
-                            </div>                
+                            </div>       
+
+                            {/* alert message */}
+                            <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
+         
                         </div>
                     </Modal>
         )

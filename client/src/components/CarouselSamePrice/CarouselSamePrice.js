@@ -46,7 +46,8 @@ class CarouselSamePrice extends Component {
                     </div> */}
                     {/* {console.log(this)} */}
                     {
-                        this.state.cards.map((card) => {
+                        this.state.cards.length > 0 ? (
+                            this.state.cards.map((card) => {
                             return(
                                 <div className="slide" key={card._id}>
                                     <img src={card.fimage} alt={card._id}/>
@@ -55,6 +56,7 @@ class CarouselSamePrice extends Component {
                                 
                             )
                         })
+                        ) : <p>You can't not trade because you don't have cards with same price</p>
                     }
                 </div>
         )

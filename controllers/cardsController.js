@@ -21,9 +21,9 @@ module.exports = {
   },
   notify: function(req, res) {
     notifyEmail(req.params.email);
-    // console.log("notify trigger");
+    // console.log(req.params);
     db.Card
-    .findOneAndUpdate({ email:req.params.email }, {chosen: true} )
+    .findOneAndUpdate({ _id: req.params.id }, {chosen: true} )
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
     // console.log(req.params.email);

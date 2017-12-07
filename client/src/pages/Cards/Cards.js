@@ -65,7 +65,7 @@ class Cards extends Component {
         if(localStorage.getItem("profile")) {
             API.chooseCard(id)
             .then(res => {
-                // console.log(typeof res.data);
+                console.log(res.data);
                 this.loadModal();
                 this.setState({cardModal: res.data})
             })
@@ -114,6 +114,7 @@ class Cards extends Component {
                     closeModal={this.closeModal}
                     fimage={this.state.cardModal.fimage}
                     key={this.state.cardModal._id}
+                    id={this.state.cardModal._id}
                     store={this.state.cardModal.store}
                     price={this.state.cardModal.price}
                     exp={this.state.cardModal.exp}

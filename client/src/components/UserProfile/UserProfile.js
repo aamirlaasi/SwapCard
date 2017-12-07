@@ -78,8 +78,9 @@ class UserProfile extends Component {
                     </div>
 
                     {/* Notification start here */}
-                    <hr />                    
                     <h2>Cards Notification</h2>
+                    <hr />
+                    
                     <div className="row">
                         <div className="col-lg-5">
                             <CarouselNotify />

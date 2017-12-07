@@ -16,7 +16,7 @@ router
 // Matches with "/api/cards/email/:email"
 
 router
-  .route("/email/:email")
+  .route("/id/:id-:email-:traderEmail")
   .get(cardsController.notify)
 
 // Matches with "/api/cards/userCard/:email"

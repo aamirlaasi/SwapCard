@@ -12,6 +12,11 @@ class CarouselNotify extends Component {
     componentDidMount() {
         this.loadProfile();
     }
+
+    //function to handlecanceltrade
+    handleCancelTrade(id) {
+        console.log(id);
+    }
     // load user cards with chosen Boolean true from database
     loadProfile() {
         API.getTradeCards(localStorage.getItem("profile"))
@@ -34,7 +39,7 @@ class CarouselNotify extends Component {
                                 <div className="slide" key={index}>
                                     <img src={card.fimage} alt={index}/>
                                     <button>Click to trade</button>  
-                                    <button>Click to cancel</button>                                                     
+                                    <button onClick={()=>this.handleCancelTrade(card._id)}>Click to cancel</button>                                                     
                                 </div>
                             )
                         })

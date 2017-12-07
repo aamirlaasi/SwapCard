@@ -50,7 +50,8 @@ class CardModal extends Component {
 
     notifyOwner(e) {
         e.preventDefault();
-        API.notify(this.props.email);
+        // console.log(this);
+        API.notify(this.props.id, this.props.email, localStorage.getItem("profile"));
         this.showAlert();
     }
     render() {

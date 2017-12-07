@@ -10,8 +10,8 @@ export default {
   chooseCard: function(id) {
     return axios.get("/api/cards/card/" + id);
   },
-  notify: function(email) {
-    return axios.get("/api/cards/email/" + email);
+  notify: function(id, email, traderEmail) {
+    return axios.get("/api/cards/id/" + id + "-" + email + "-" + traderEmail);
     // alert(email);
   },
   getUserCard: function(email) {

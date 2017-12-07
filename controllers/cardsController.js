@@ -23,7 +23,7 @@ module.exports = {
     notifyEmail(req.params.email);
     // console.log(req.params);
     db.Card
-    .findOneAndUpdate({ _id: req.params.id }, {chosen: true, traderEmail: req.params.email} )
+    .findOneAndUpdate({ _id: req.params.id }, {chosen: true, traderEmail: req.params.traderEmail} )
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
     // console.log(req.params.email);
@@ -53,7 +53,7 @@ module.exports = {
   },
   getTradeCards: function(req, res) {
     db.Card
-    .find({email:req.params.email, chosen: true})
+    .find({$and: [{'email':req.params.email},{'chosen' : true}]})
     .then(card => {
       res.send(card);
       })
@@ -85,10 +85,6 @@ module.exports = {
     .catch(err => res.status(422).json(err));
   },
   acceptTrade: function(req, res) {
-    db.Card
-    .findOneAndUpdate({ _id: req.params.id })
-    .then(card => res.json(card))
-    .catch(err => res.status(422).json(err));
-    // console.log(req.params.email);
-  },
+    console.log(req.params.id);
+  }
 }

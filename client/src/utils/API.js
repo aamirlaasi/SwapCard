@@ -33,12 +33,13 @@ export default {
     return axios.get("/api/cards/getTradeCards/" + email);
   },
   cancelTradeCard: function(id) {
-     axios.get("/api/cards/cancelTradeCard/" + id);
+    axios.get("/api/cards/cancelTradeCard/" + id);
   },
   removeCard: function(id) {
     axios.delete("/api/cards/removeCard/" + id);
  },
  acceptTrade: function(id) {
-  axios.get("/api/cards/acceptTrade/" + id);
+  //  console.log(id);
+    axios.get("/api/cards/acceptTrade/" + id);
 }
 };

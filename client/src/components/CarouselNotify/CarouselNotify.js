@@ -13,11 +13,13 @@ class CarouselNotify extends Component {
         this.loadProfile();
     }
     handleAcceptTrade(id) {
+        // console.log(id);
         API.acceptTrade(id);
-        this.loadProfile();        
-    }
+        // this.loadProfile();
+    }   
     //function to handlecanceltrade
     handleCancelTrade(id) {
+        console.log(id);
         API.cancelTradeCard(id);
         this.loadProfile();
     }   
@@ -25,7 +27,7 @@ class CarouselNotify extends Component {
     loadProfile() {
         API.getTradeCards(localStorage.getItem("profile"))
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             this.setState({
                 cards: res.data
             })

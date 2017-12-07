@@ -79,7 +79,7 @@ class CardModal extends Component {
                             {/* Card that user have */}
                             <div className="row">
                                  <h3>Your cards (which has same price to the above card)</h3>
-                                {true ? <Carousel sameprice={this.state.cardPrice} /> : "Please login or create accout to trade card"}
+                                <Carousel sameprice={this.state.cardPrice} />
                             </div>                
                         </div>
                     </Modal>

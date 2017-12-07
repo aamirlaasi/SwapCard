@@ -16,21 +16,24 @@ class Carousel extends Component {
     //         return false;
     //     }
     // }
+
+
+    // When the component mounts, load all cards of user and save them to this.state.cards
     componentDidMount() {
-        this.loadProfile();
+        this.loadCards();
     }
     // load user cards from database
     removeCard(id) {
         console.log(id);
         // API.removeCard(id);
     }
-    loadProfile() {
+    loadCards() {
         API.getUserProfile(localStorage.getItem("profile"))
         .then(res => {
             console.log(res.data);
             this.setState({
-                cards: res.data.giftcard
-            })
+                cards: res.data
+            });
         }
         ).catch(err => console.log(err));
     }
@@ -42,17 +45,16 @@ class Carousel extends Component {
                         <img src="https://www.paypal-gifts.com/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/t/o/toysrus_card_xxlweb.png" alt="sometext"/>
                     </div> */}
                     {console.log(this)}
-                    {(
-                        this.state.cards.map((card, index) => {
+                    {
+                        this.state.cards.map((card) => {
                             return(
-                                <div className="slide" key={index}>
-                                    <img src={card.fimage} alt={index}/>
+                                <div className="slide" key={card._id}>
+                                    <img src={card.fimage} alt={card._id}/>
                                     <button onClick={()=>{this.removeCard(card.store)}}>Remove</button>                                    
                                 </div>
                                 
                             )
                         })
-                        ) 
                     }
                 </div>
         )

@@ -22,8 +22,7 @@ class Cards extends Component {
       showAlert = () => {
         this.msg.show('You need to login first', {
           time: 2000,
-          type: 'success',
-        //   icon: <img src="path/to/some/img/32x32.png" />
+          type: 'error'
         })
       }
     // When the component mounts, load all cards and save them to this.state.cards
@@ -66,7 +65,7 @@ class Cards extends Component {
         if(localStorage.getItem("profile")) {
             API.chooseCard(id)
             .then(res => {
-                // console.log(res.data);
+                // console.log(typeof res.data);
                 this.loadModal();
                 this.setState({cardModal: res.data})
             })

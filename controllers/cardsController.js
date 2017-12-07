@@ -28,12 +28,12 @@ module.exports = {
   },
   findByEmail: function(req, res) {
     // console.log("from controller:" + req.params.email)
-    db.User
+    db.Card
     .find({email:req.params.email})
     .then(dbUserProfile => {
       // dbUserProfile = JSON.stringify(dbUserProfile[0]);
       // console.log(dbUserProfile[0]);      
-      res.send(dbUserProfile[0]);
+      res.send(dbUserProfile);
       })
     .catch(err => res.status(422).json(err));
     

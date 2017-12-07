@@ -21,7 +21,7 @@ module.exports = {
   },
   notify: function(req, res) {
     notifyEmail(req.params.email);
-    console.log("notify trigger");
+    // console.log("notify trigger");
     db.Card
     .findOneAndUpdate({ email:req.params.email }, {chosen: true} )
     .then(dbModel => res.json(dbModel))
@@ -40,10 +40,9 @@ module.exports = {
   findByEmail: function(req, res) {
     // console.log("from controller:" + req.params.email)
     db.Card
-    .find({email:req.params.email})
+    .find({$and: [{'email':req.params.email},{'chosen' : false}]})
     .then(cards => {
-      // dbUserProfile = JSON.stringify(dbUserProfile[0]);
-      // console.log(dbUserProfile[0]);      
+      // console.log(cards);
       res.send(cards);
       })
     .catch(err => res.status(422).json(err));
@@ -52,14 +51,11 @@ module.exports = {
   addNewCard: function(req,res) {
     console.log(req.params);
   },
-  getTradeCard: function(req, res) {
-    // console.log("from controller:" + req.params.email)
+  getTradeCards: function(req, res) {
     db.Card
-    .find({email:req.params.email, chosen: 1})
-    .then(dbModel => {
-      // dbUserProfile = JSON.stringify(dbUserProfile[0]);
-      // console.log(dbUserProfile[0]);      
-      res.send(dbModel);
+    .find({email:req.params.email, chosen: true})
+    .then(card => {
+      res.send(card);
       })
     .catch(err => res.status(422).json(err));
 

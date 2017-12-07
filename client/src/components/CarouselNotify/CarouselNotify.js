@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "./Carousel.css";
+import "./CarouselNotify.css";
 import API from "../../utils/API";
 
 
@@ -14,11 +14,11 @@ class CarouselNotify extends Component {
     }
     // load user cards with chosen Boolean true from database
     loadProfile() {
-        API.getUserProfile(localStorage.getItem("profile"))
+        API.getTradeCards(localStorage.getItem("profile"))
         .then(res => {
             console.log(res.data);
             this.setState({
-                cards: res.data.giftcard
+                cards: res.data
             })
         }
         ).catch(err => console.log(err));
@@ -27,22 +27,20 @@ class CarouselNotify extends Component {
     render() {
         return(
             <div id="carousel">
-                    {/* <div className="slide">
-                        <img src="https://www.paypal-gifts.com/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/t/o/toysrus_card_xxlweb.png" alt="sometext"/>
-                    </div> */}
-                    {console.log(this)}
-                    {(
+            {<p>You have {this.state.cards.length} requests</p>}
+                    {(  
                         this.state.cards.map((card, index) => {
                             return(
                                 <div className="slide" key={index}>
                                     <img src={card.fimage} alt={index}/>
-                                    <button onClick={()=>{this.removeCard(card.store)}}>Remove</button>                                    
+                                    <button>Click to trade</button>  
+                                    <button>Click to cancel</button>                                                     
                                 </div>
                             )
                         })
                         ) 
                     }
-                </div>
+            </div>
         )
     }
 }

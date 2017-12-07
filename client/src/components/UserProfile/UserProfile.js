@@ -6,6 +6,7 @@ import API from "../../utils/API";
 import Carousel from "../Carousel";
 import AddNewCard from "../AddNewCard";
 import Auth from "../../Auth/Auth.js";
+import CarouselNotify from "../CarouselNotify";
 
 class UserProfile extends Component {
     constructor(props) {
@@ -75,14 +76,17 @@ class UserProfile extends Component {
                             <p>You've got an order </p>
                         </div> */}
                     </div>
+
                     {/* Notification start here */}
                     <hr />                    
                     <h2>Cards Notification</h2>
                     <div className="row">
                         <div className="col-lg-5">
-                            <p>You have notifications</p>
+                            <CarouselNotify />
                         </div>
                     </div>
+
+
                     {/* end card notification */}
                     <h2>Cards Control</h2>
                     <hr />

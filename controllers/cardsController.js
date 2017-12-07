@@ -58,6 +58,13 @@ module.exports = {
       res.send(card);
       })
     .catch(err => res.status(422).json(err));
-
+  },
+  getCardsSamePrice: function(req, res) {
+    db.Card
+    .find({$and: [{'email':req.params.email},{'price' : req.params.price}]})
+    .then(card => {
+      res.send(card);
+      })
+    .catch(err => res.status(422).json(err));
   }
 }

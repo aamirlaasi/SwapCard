@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Modal from "react-modal";
-import Carousel from "../Carousel";
+import CarouselSamePrice from "../CarouselSamePrice";
 import API from "../../utils/API";
 import "./CardModal.css";
 import AlertContainer from 'react-alert';
@@ -97,7 +97,7 @@ class CardModal extends Component {
                             {/* Card that user have */}
                             <div className="row">
                                  <h3>Your cards (which has same price to the above card)</h3>
-                                <Carousel sameprice={this.state.cardPrice} />
+                                <CarouselSamePrice price={this.state.cardPrice} />
                             </div>       
 
                             {/* alert message */}

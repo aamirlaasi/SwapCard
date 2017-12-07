@@ -27,6 +27,11 @@ router
   router
   .route("/userProfile/:email")
   .get(cardsController.getUserProfile)
+
+// Matches with "/api/cards/userCardsSamePrice/:email"
+router
+.route("/userCardsSamePrice/:email-:price")
+.get(cardsController.getCardsSamePrice)
   
 // Matches with "/api/cards/saveCard:"
 router

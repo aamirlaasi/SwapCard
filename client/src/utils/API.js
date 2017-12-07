@@ -18,6 +18,10 @@ export default {
     // console.log(axios.get("/api/cards/userProfile/" + email));
    return axios.get("/api/cards/userCard/" + email);
   },
+  getUserCardsSamePrice: function(email, price) {
+    // console.log(axios.get("/api/cards/userProfile/" + email));
+   return axios.get("/api/cards/userCardsSamePrice/" + email + "-" + price);
+  },
   getUserProfile: function(email) {
    return axios.get("/api/cards/userProfile/" + email);
   },

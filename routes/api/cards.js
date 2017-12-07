@@ -35,7 +35,7 @@ router
   
 // Matches with "/api/cards/saveCard:"
 router
-  .route("/addNewCard/:store-:price-:exp-:fimage-:bimage")
+  .route("/addNewCard/:store-:price-:exp-:fimage-:bimage-:email")
   .post(cardsController.addNewCard)
 
 // Matches with "/api/cards/saveCard:"

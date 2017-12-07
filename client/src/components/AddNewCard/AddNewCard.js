@@ -61,7 +61,7 @@ class AddNewCard extends Component {
         const bimage = e.target.elements.bimage.value;
         let exp = JSON.stringify(e.target.elements.exp.value);
         exp = exp.replace(/-/g, ".")
-        API.addNewCard(store, price, exp, fimage, bimage);
+        API.addNewCard(store, price, exp, fimage, bimage, localStorage.getItem("profile"));
     }
 
     render() {
@@ -86,10 +86,10 @@ class AddNewCard extends Component {
                                 <input type="date" className="form-group" name="exp"  placeholder="Exp date" required/>
                             </div>   
                             <div className="col-lg-2">
-                                <input type="text" className="form-group" name="fimage"  placeholder="fimage URL" required/>
+                                <input type="text" className="form-group" name="fimage"  placeholder="fimage URL" accept="image/*"  required/>
                             </div> 
                             <div className="col-lg-2">
-                                <input type="text" className="form-group" name="bimage"  placeholder="bimage URL" required/>
+                                <input type="text" className="form-group" name="bimage" accept="image/*"   placeholder="bimage URL" required/>
                             </div>                          
                         </div>
                         <div className="row">

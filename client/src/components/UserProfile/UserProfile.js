@@ -56,6 +56,8 @@ class UserProfile extends Component {
                     <button className={window.location.pathname === "/" ? "active" : ""}>
                         <Link to="/">Back to homepage</Link>
                     </button>
+                    {localStorage.getItem("profile") ? <p>Logged in as: {localStorage.getItem("profile")}</p> : ""}
+
                     {/* <button className={localStorage.getItem("profile") ? "active" : ""}>
                         <Link to="/">Logout</Link>
                     </button> */}

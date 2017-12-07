@@ -85,7 +85,9 @@ class CarouselNotify extends Component {
                                     <p>Trader want this card: </p>
                                     <img src={card.fimage} alt={index}/>
                                     <p>You will receive: </p>
-                                    <img src={this.state.cardTrader.fimage} alt={this.state.cardTrader._id} />
+                                    {!!this.state.cardTrader ? (
+                                        <img src={this.state.cardTrader.fimage} alt={this.state.cardTrader._id} />
+                                    ): ""}
                                     <button onClick={()=>this.handleAcceptTrade(card._id, card.traderEmail, this.state.cardTrader._id, localStorage.getItem("profile"))}>Click to trade</button> 
                                     <button onClick={()=>this.handleCancelTrade(card._id, this.state.cardTrader._id)}>Click to cancel</button>                                                     
                                 </div>

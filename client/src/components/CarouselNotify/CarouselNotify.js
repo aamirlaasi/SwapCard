@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./CarouselNotify.css";
 import API from "../../utils/API";
+import AlertContainer from 'react-alert';
 
 
 class CarouselNotify extends Component {
@@ -8,6 +9,20 @@ class CarouselNotify extends Component {
         loading: true,
         cards : []
     }
+    alertOptions = {
+        offset: 14,
+        position: 'top right',
+        theme: 'dark',
+        time: 5000,
+        transition: 'scale'
+      }
+
+      showAlert = () => {
+        this.msg.show('Transaction success', {
+          time: 1000,
+          type: 'info'
+        })
+      }
     
     componentDidMount() {
         this.loadProfile();
@@ -15,7 +30,8 @@ class CarouselNotify extends Component {
     handleAcceptTrade(id, traderEmail) {
         // console.log(id);
         API.acceptTrade(id, traderEmail);
-        // this.loadProfile();
+        this.showAlert();
+        this.loadProfile();
     }   
     //function to handlecanceltrade
     handleCancelTrade(id) {
@@ -35,6 +51,18 @@ class CarouselNotify extends Component {
         ).catch(err => console.log(err));
     }
 
+    // load trader cards with same price from database
+    // loadTraderCardSamePrice() {
+    //     API.getUserCardsSamePrice(localStorage.getItem("profile"), price)
+    //     .then(res => {
+    //         console.log(res.data);
+    //         this.setState({
+    //             cards: res.data
+    //         })
+    //     }
+    //     ).catch(err => console.log(err));
+    // }
+
     render() {
         return(
             <div id="carousel">
@@ -51,6 +79,8 @@ class CarouselNotify extends Component {
                         })
                         ) 
                     }
+                    {/* alert message */}
+                    <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
             </div>
         )
     }

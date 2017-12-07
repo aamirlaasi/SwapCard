@@ -94,14 +94,14 @@ module.exports = {
   acceptTrade: function(req, res) {
     // console.log(req.params);
     db.Card
-    .findOneAndUpdate({ _id: req.params.id }, {chosen: false, email: req.params.traderEmail, traderEmail: ""} )
+    .findOneAndUpdate({ _id: req.params.id }, {chosen: false, email: req.params.traderEmail, traderEmail: "", expectedOwner: ""} )
     .then(card => {
       res.send(card);
       })
     .catch(err => res.status(422).json(err));
 
     db.Card
-    .findOneAndUpdate({ _id: req.params.id2 }, {chosen: false, email: req.params.email, traderEmail: ""} )
+    .findOneAndUpdate({ _id: req.params.id2 }, {chosen: false, email: req.params.email, traderEmail: "", expectedOwner: ""} )
     .then(card => {
       res.send(card);
       })

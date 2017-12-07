@@ -18,7 +18,7 @@ class Cards extends Component {
         time: 5000,
         transition: 'scale'
       }
-     
+
       showAlert = () => {
         this.msg.show('You need to login first', {
           time: 2000,
@@ -45,7 +45,7 @@ class Cards extends Component {
             // console.log(res.data);
             this.setState({cards: res.data})
         }
-            
+
         ).catch(err => console.log(err));
     };
 
@@ -72,14 +72,14 @@ class Cards extends Component {
             })
             .catch(err => {console.log(err);alert("You might not start the app yet. Run yarn build and try again")});
         } else {
-<<<<<<< HEAD
+// <<<<<<< HEAD
             alert("Please login or signup before trade");
-=======
+// =======
             // alert("Please login or signup before trading");
             this.showAlert();
->>>>>>> e42a0ce30abd5488641dd980fc6d4497c9ed7919
+// >>>>>>> e42a0ce30abd5488641dd980fc6d4497c9ed7919
         }
-        
+
     }
 
     //handleTrade function
@@ -87,7 +87,7 @@ class Cards extends Component {
     // handleTrade = () => {
     //     alert("function in testing");
     // }
-    
+
     render() {
         // this.autoRefresh();
         return (
@@ -99,7 +99,7 @@ class Cards extends Component {
                             <span key={card._id}>
                                 <Card
                                     onClick={()=>this.chooseCard(card._id)}
-                                    fimage={card.fimage} 
+                                    fimage={card.fimage}
                                     store={card.store}
                                     price={card.price}
                                     exp={card.exp}
@@ -109,11 +109,11 @@ class Cards extends Component {
                     })}
                 </div>
                 {/* render Modal */}
-                <CardModal 
+                <CardModal
                     handleTrade = {this.handleTrade}
                     selectedCard={this.state.selectedCard}
                     closeModal={this.closeModal}
-                    fimage={this.state.cardModal.fimage} 
+                    fimage={this.state.cardModal.fimage}
                     key={this.state.cardModal._id}
                     store={this.state.cardModal.store}
                     price={this.state.cardModal.price}

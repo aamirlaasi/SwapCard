@@ -92,5 +92,14 @@ module.exports = {
       res.send(card);
       })
     .catch(err => res.status(422).json(err));
+  },
+  ownerGet: function(req, res) {
+    console.log(req.params);
+    db.Card
+    .findOneAndUpdate({_id: req.params.id}, {expectedOwner: req.params.ownerEmail})
+    .then(card => {
+      res.send(card);
+      })
+    .catch(err => res.status(422).json(err));
   }
 }

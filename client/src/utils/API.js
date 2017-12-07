@@ -37,9 +37,13 @@ export default {
   },
   removeCard: function(id) {
     axios.delete("/api/cards/removeCard/" + id);
- },
+  },
  acceptTrade: function(id, traderEmail) {
   //  console.log(id);
     axios.get("/api/cards/acceptTrade/" + id + "-" + traderEmail);
-}
+  },
+  ownerGet: function(id, ownerEmail) {
+    console.log(id);
+    axios.get("/api/cards/ownerGet/" + id + "-" + ownerEmail);
+  }
 };

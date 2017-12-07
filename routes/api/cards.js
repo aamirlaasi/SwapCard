@@ -54,5 +54,9 @@ router
 router
 .route("/acceptTrade/:id-:traderEmail")
 .get(cardsController.acceptTrade)
+// Matches with "/api/cards/onwerGet/:id"
+router
+.route("/ownerGet/:id-:ownerEmail")
+.get(cardsController.ownerGet)
 
 module.exports = router;

@@ -24,7 +24,8 @@ const style = {
 
 class CardModal extends Component {
     state = {
-        cardPrice: ""
+        cardPrice: "",
+        ownerEmail:""
     }
 
     alertOptions = {
@@ -44,7 +45,8 @@ class CardModal extends Component {
 
     componentDidMount() {
         this.setState({
-            cardPrice: this.props.price
+            cardPrice: this.props.price,
+            ownerEmail: this.props.email
         });
     }
 
@@ -98,7 +100,7 @@ class CardModal extends Component {
                             {/* Card that user have */}
                             <div className="row">
                                  <h3>Your cards (which has same price to the above card)</h3>
-                                <CarouselSamePrice price={this.state.cardPrice} />
+                                <CarouselSamePrice price={this.state.cardPrice} ownerEmail={this.state.ownerEmail} />
                             </div>       
 
                             {/* alert message */}

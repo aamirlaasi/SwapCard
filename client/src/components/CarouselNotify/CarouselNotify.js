@@ -19,8 +19,8 @@ class CarouselNotify extends Component {
       }
 
       showAlert = () => {
-        this.msg.show('Transaction success', {
-          time: 1000,
+        this.msg.show('Transaction success, refresh page to see your card', {
+          time: 3000,
           type: 'info'
         })
       }
@@ -33,6 +33,8 @@ class CarouselNotify extends Component {
         API.acceptTrade(id, traderEmail, id2, email);
         this.showAlert();
         this.loadProfile();
+        window.location.reload();     
+        
     }   
     //function to handlecanceltrade
     handleCancelTrade(id, id2) {

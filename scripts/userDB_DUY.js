@@ -13,13 +13,13 @@ mongoose.connect(
 
 const UserSeed = [
   {
-    fullname: "Duy Do",
+    fullname: "Walter",
     email:"duydo@gmail.com",
     password: "12345",
     userCreated: new Date(Date.now()),
   },
   {
-    fullname: "Duy Do DEV",
+    fullname: "Shelock Homes",
     email:"duydo.dev@gmail.com",
     password: "12345",
     userCreated: new Date(Date.now()),

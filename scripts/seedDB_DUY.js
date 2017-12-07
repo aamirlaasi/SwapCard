@@ -61,7 +61,8 @@ const cardSeed = [
   }
 ];
 
-db.Card
+
+  db.Card
   .remove({})
   .then(() => db.Card.collection.insertMany(cardSeed))
   .then(data => {
@@ -72,3 +73,6 @@ db.Card
     console.error(err);
     process.exit(1);
   });
+
+
+  

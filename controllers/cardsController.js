@@ -5,8 +5,9 @@ const notifyEmail = require("./email.js");
 // Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
+    // console.log("From controller findall: " + req.params.email)
     db.Card
-      .find({})
+      .find({'email':{$ne: req.params.email}})
       .sort({ date: -1 })
       // .then(dbModel => res.json(dbModel))
       .then(dbModel => res.send(dbModel))

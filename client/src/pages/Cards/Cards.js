@@ -39,7 +39,7 @@ class Cards extends Component {
     // }
 
     loadCards = () => {
-        API.getCards()
+        API.getCards(localStorage.getItem("profile"))
         .then(res => {
             // console.log(res.data);
             this.setState({cards: res.data})

@@ -2,13 +2,13 @@ import axios from "axios";
 
 export default {
   // Gets all cards
-  getCards: function() {
+  getCards: function(email) {
     // console.log( axios.get("/api/cards"));
-    return axios.get("/api/cards");
+    return axios.get("/api/cards/" + email);
   },
   //Choose specified card
   chooseCard: function(id) {
-    return axios.get("/api/cards/" + id);
+    return axios.get("/api/cards/card/" + id);
   },
   notify: function(email) {
     return axios.get("/api/cards/email/" + email);

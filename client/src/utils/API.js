@@ -31,5 +31,8 @@ export default {
   },
   getTradeCards: function(email) {
     return axios.get("/api/cards/getTradeCards/" + email);
+  },
+  cancelTradeCard: function(id) {
+     axios.get("/api/cards/cancelTradeCard/" + id);
   }
 };

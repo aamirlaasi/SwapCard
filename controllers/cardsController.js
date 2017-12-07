@@ -59,6 +59,14 @@ module.exports = {
       })
     .catch(err => res.status(422).json(err));
   },
+  cancelTradeCard: function(req, res) {
+    db.Card
+    .findOneAndUpdate({ _id: req.params.id }, {chosen: false} )
+    .then(card => {
+      res.send(card);
+      })
+    .catch(err => res.status(422).json(err));
+  },
   getCardsSamePrice: function(req, res) {
     db.Card
     .find({$and: [{'email':req.params.email},{'price' : req.params.price}]})

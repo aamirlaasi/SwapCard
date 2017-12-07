@@ -15,8 +15,9 @@ class CarouselNotify extends Component {
 
     //function to handlecanceltrade
     handleCancelTrade(id) {
-        console.log(id);
-    }
+        API.cancelTradeCard(id);
+        this.loadProfile();
+    }   
     // load user cards with chosen Boolean true from database
     loadProfile() {
         API.getTradeCards(localStorage.getItem("profile"))

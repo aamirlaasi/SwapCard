@@ -42,6 +42,9 @@ router
 router
   .route("/getTradeCards/:email")
   .get(cardsController.getTradeCards)
-
+// Matches with "/api/cards/saveCard:"
+router
+.route("/cancelTradeCard/:id")
+.get(cardsController.cancelTradeCard)
 
 module.exports = router;

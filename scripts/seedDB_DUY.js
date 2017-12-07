@@ -56,10 +56,10 @@ const cardSeed = [
   },{
     store: "Home Depot",
     price: 50,
-    chosen: true,    
+    chosen: false,    
     fimage: "http://www.momfluential.net/wp-content/uploads/2013/07/home-depot-card.jpg",
     bimage: "https://i.colnect.net/f/1051/748/Happy-Birthday-back.jpg",
-    email:"duydo@gmail.com",
+    email:"duydo2@gmail.com",
     exp: new Date(Date.now()),
     traderEmail:""
   }

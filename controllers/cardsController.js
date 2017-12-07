@@ -74,5 +74,14 @@ module.exports = {
       res.send(card);
       })
     .catch(err => res.status(422).json(err));
+  },
+  removeCard: function(req, res) {
+    console.log(req.params)    
+    db.Card
+    .remove({_id: req.params.id})
+    .then(card => {
+      res.send(card);
+      })
+    .catch(err => res.status(422).json(err));
   }
 }

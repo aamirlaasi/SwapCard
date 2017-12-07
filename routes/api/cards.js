@@ -46,5 +46,9 @@ router
 router
 .route("/cancelTradeCard/:id")
 .get(cardsController.cancelTradeCard)
+// Matches with "/api/cards/removeCard/:id"
+router
+.route("/removeCard/:id")
+.delete(cardsController.removeCard)
 
 module.exports = router;

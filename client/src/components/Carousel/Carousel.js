@@ -23,10 +23,10 @@ class Carousel extends Component {
         this.loadCards();
     }
     // load user cards from database
-    // removeCard(id) {
-    //     console.log(id);
-    //     // API.removeCard(id);
-    // }
+    removeCard(id) {
+        console.log(id);
+        API.removeCard(id);
+    }
     loadCards() {
         API.getUserCard(localStorage.getItem("profile"))
         .then(res => {
@@ -50,7 +50,7 @@ class Carousel extends Component {
                             return(
                                 <div className="slide" key={card._id}>
                                     <img src={card.fimage} alt={card._id}/>
-                                    <button>Remove</button>                                    
+                                    <button onClick={()=>this.removeCard(card._id)}>Remove</button>                                    
                                 </div>
                                 
                             )

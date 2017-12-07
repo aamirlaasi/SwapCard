@@ -84,7 +84,7 @@ class CarouselNotify extends Component {
                         this.state.cards.map((card, index) => {
                             return(
                                 <div className="" key={index}>
-                                    <p>Trader want this card: </p>
+                                    <p>Trader want this card from you: </p>
                                     <img src={card.fimage} alt={index}/>
                                     <p>You will receive: </p>
                                     {!!this.state.cardTrader ? (

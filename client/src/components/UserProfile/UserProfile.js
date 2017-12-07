@@ -25,7 +25,7 @@ class UserProfile extends Component {
     componentDidMount() {
         API.getUserProfile(localStorage.getItem("profile"))
         .then(res => {
-            // console.log(res.data);
+            console.log(res.data);
             this.setState({
                 fullname: res.data.fullname,                
                 email: res.data.email

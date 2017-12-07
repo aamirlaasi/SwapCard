@@ -19,12 +19,14 @@ router
   .route("/email/:email")
   .put(cardsController.notify)
 
-// Matches with "/api/cards/userProfile/:email"
-
+// Matches with "/api/cards/userCard/:email"
 router
-  .route("/userProfile/:email")
+  .route("/userCard/:email")
   .get(cardsController.findByEmail)
-
+// Matches with "/api/cards/userProfile/:email"
+  router
+  .route("/userProfile/:email")
+  .get(cardsController.getUserProfile)
   
 // Matches with "/api/cards/saveCard:"
 router

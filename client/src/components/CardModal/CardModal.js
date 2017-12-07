@@ -16,7 +16,7 @@ const style = {
         WebkitOverflowScrolling    : 'touch',
         borderRadius               : '4px',
         outline                    : 'none',
-        padding                    : '20px'
+        padding                    : '20px',
     }
   };
 
@@ -42,6 +42,7 @@ class CardModal extends Component {
                         isOpen={!!this.props.selectedCard}
                         onRequestClose={this.props.closeModal}
                         contentLabel="Card details"
+                        ariaHideApp={false}
                     >
                         <div>
                             <div className="row content">

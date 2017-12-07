@@ -12,9 +12,9 @@ class CarouselNotify extends Component {
     componentDidMount() {
         this.loadProfile();
     }
-    handleAcceptTrade(id) {
+    handleAcceptTrade(id, traderEmail) {
         // console.log(id);
-        API.acceptTrade(id);
+        API.acceptTrade(id, traderEmail);
         // this.loadProfile();
     }   
     //function to handlecanceltrade
@@ -27,7 +27,7 @@ class CarouselNotify extends Component {
     loadProfile() {
         API.getTradeCards(localStorage.getItem("profile"))
         .then(res => {
-            // console.log(res.data);
+            console.log(res.data);
             this.setState({
                 cards: res.data
             })
@@ -44,7 +44,7 @@ class CarouselNotify extends Component {
                             return(
                                 <div className="slide" key={index}>
                                     <img src={card.fimage} alt={index}/>
-                                    <button onClick={()=>this.handleAcceptTrade(card._id)}>Click to trade</button>  
+                                    <button onClick={()=>this.handleAcceptTrade(card._id, card.traderEmail)}>Click to trade</button>  
                                     <button onClick={()=>this.handleCancelTrade(card._id)}>Click to cancel</button>                                                     
                                 </div>
                             )

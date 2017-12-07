@@ -85,6 +85,12 @@ module.exports = {
     .catch(err => res.status(422).json(err));
   },
   acceptTrade: function(req, res) {
-    console.log(req.params.id);
+    // console.log(req.params);
+    db.Card
+    .findOneAndUpdate({ _id: req.params.id }, {chosen: false, email: req.params.traderEmail, traderEmail: ""} )
+    .then(card => {
+      res.send(card);
+      })
+    .catch(err => res.status(422).json(err));
   }
 }

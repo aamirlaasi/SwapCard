@@ -52,7 +52,7 @@ router
 .delete(cardsController.removeCard)
 // Matches with "/api/cards/acceptTrade/:id"
 router
-.route("/acceptTrade/:id")
+.route("/acceptTrade/:id-:traderEmail")
 .get(cardsController.acceptTrade)
 
 module.exports = router;

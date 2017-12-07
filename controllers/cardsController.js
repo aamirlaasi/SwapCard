@@ -23,7 +23,7 @@ module.exports = {
     notifyEmail(req.params.email);
     // console.log(req.params);
     db.Card
-    .findOneAndUpdate({ _id: req.params.id }, {chosen: true} )
+    .findOneAndUpdate({ _id: req.params.id }, {chosen: true, traderEmail: req.params.email} )
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
     // console.log(req.params.email);

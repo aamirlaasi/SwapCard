@@ -68,6 +68,7 @@ class Header extends Component {
             {/* <Signup closeSignup={this.closeSignup} handleSignup={this.state.selectedSignup} handleSignupSubmit={this.handleSignupSubmit} /> */}
             <h1>SwapCard</h1>
             <h2>A place to trade your unused and unwanted gift cards for retailer you prefer</h2>
+            {localStorage.getItem("profile") ? <p>Logged in as: {localStorage.getItem("profile")}</p> : ""}
             {
               !this.auth.isAuthenticated() && (
                   <Button

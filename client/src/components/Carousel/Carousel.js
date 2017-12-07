@@ -24,8 +24,9 @@ class Carousel extends Component {
     }
     // load user cards from database
     removeCard(id) {
-        console.log(id);
+        // console.log(id);
         API.removeCard(id);
+        this.loadCards();        
     }
     loadCards() {
         API.getUserCard(localStorage.getItem("profile"))

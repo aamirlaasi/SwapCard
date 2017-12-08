@@ -4,10 +4,10 @@ import { AUTH_CONFIG } from './auth0-variables';
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
-    domain: AUTH_CONFIG.domain,
-    clientID: AUTH_CONFIG.clientId,
-    redirectUri: AUTH_CONFIG.callbackUrl,
-    audience: `https://${AUTH_CONFIG.domain}/userinfo`,
+    domain: process.env.AUTH0_DOMAIN,
+    clientID: process.env.AUTH0_CLIENT_ID,
+    redirectUri: process.env.AUTH0_CALLBACK_URL,
+    audience: `https://${process.env.AUTH0_DOMAIN}/userinfo`,
     responseType: 'token id_token',
     scope: 'openid profile'
   });
@@ -57,7 +57,7 @@ export default class Auth {
   logout() {
     this.auth0.logout({
       returnTo: 'https://agile-ravine-35881.herokuapp.com',
-      client_id: AUTH_CONFIG.clientId
+      client_id: process.env.AUTH0_CLIENT_ID
     });
     // Clear access token and ID token from local storage
     localStorage.removeItem('access_token');

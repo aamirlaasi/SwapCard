@@ -34,6 +34,7 @@ const App = () =>
         console.log(props);
         return <Cards {...props}/>
       }}/>
+      
     </Switch>
   </div>
 </Router>;

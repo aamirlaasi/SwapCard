@@ -24,6 +24,9 @@ if (process.env.NODE_ENV === "production") {
 // Serve up static assets
 app.use(express.static("client/build"));
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
+});
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB

@@ -49,7 +49,24 @@ module.exports = {
     
   },
   addNewCard: function(req,res) {
-    console.log(req.params);
+    // console.log(req.params);
+    let data = {
+      store: req.params.store,
+      price: req.params.price,
+      chosen: false,    
+      fimage: req.params.fimage,
+      email: req.params.email,
+      bimage: req.params.bimage,
+      exp: new Date(Date.now()),
+      traderEmail:"",
+      expectedOwner:""
+    }
+    db.Card
+    .collection.insertOne(data)
+    .then(card => {
+      res.send(card);
+      })
+    .catch(err => res.status(422).json(err));
   },
   getTradeCards: function(req, res) {
     db.Card

@@ -27,8 +27,8 @@ const App = () =>
       <Route exact path="/" component={Cards} />
       <Route exact path="/user" render={(props) => {
         return <User {...props}/>
-      }} />      
-      <Route path="/callback" render={(props) => {
+      }} />
+      <Route path="/Callback" render={(props) => {
         handleAuthentication(props);
         // console.log(props);
         return <Cards {...props}/>

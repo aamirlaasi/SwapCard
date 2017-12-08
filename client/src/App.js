@@ -29,8 +29,9 @@ const App = () =>
         return <User {...props}/>
       }} />
       <Route path="/callback" render={(props) => {
+        console.log(props);
         handleAuthentication(props);
-        // console.log(props);
+        console.log(props);
         return <Cards {...props}/>
       }}/>
     </Switch>

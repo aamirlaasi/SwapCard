@@ -56,7 +56,7 @@ export default class Auth {
 
   logout() {
     this.auth0.logout({
-      returnTo: 'https://swapgift.herokuapp.com/',
+      returnTo: 'https://agile-ravine-35881.herokuapp.com',
       client_id: AUTH_CONFIG.clientId
     });
     // Clear access token and ID token from local storage

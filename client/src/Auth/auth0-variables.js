@@ -1,5 +1,5 @@
 export const AUTH_CONFIG = {
-  domain: 'http://app82573661.auth0.com/',
-  clientId: 'Ab19b6jo7OHyYsEEkZiqtRG9nTiQ3yls',
+  domain: 'webauth.auth0.com',
+  clientId: 'niFiMEOp4hsdFPv2FyOAnQ8YSPM7R6Y4',
   callbackUrl: 'https://swapgift.herokuapp.com/callback'
 }

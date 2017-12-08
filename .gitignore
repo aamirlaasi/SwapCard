@@ -20,4 +20,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #Ignore the following file
-client/src/Auth/auth0-variables.js
+#client/src/Auth/auth0-variables.js

@@ -1,4 +1,3 @@
-// import { exists } from "fs";
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -14,7 +13,6 @@ const PORT = process.env.PORT || 3001;
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
 
 // Add routes, both API and view
 app.use(routes);
@@ -36,6 +34,8 @@ mongoose.connect(
     useMongoClient: true
   }
 );
+
+
 
 // db.User.create({name: "Swap CARDS" })
 // .then(function(dbUser) {
@@ -84,6 +84,8 @@ mongoose.connect(
 //   }
 // })
 // })
+
+
 
 
 // Start the API server

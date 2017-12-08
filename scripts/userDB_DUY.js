@@ -13,13 +13,13 @@ mongoose.connect(
 
 const UserSeed = [
   {
-    fullname: "Duy Do",
+    fullname: "Walter",
     email:"duydo@gmail.com",
     password: "12345",
     userCreated: new Date(Date.now()),
   },
   {
-    fullname: "Duy Do DEV",
+    fullname: "Shelock Homes",
     email:"duydo.dev@gmail.com",
     password: "12345",
     userCreated: new Date(Date.now()),
@@ -31,14 +31,19 @@ const UserSeed = [
     userCreated: new Date(Date.now()),
   }
   ];
-  db.User
-  .remove({})
-  .then(() => db.User.collection.insertMany(UserSeed))
-  .then(data => {
-    console.log(data.insertedIds.length + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+
+  
+  
+    db.User
+    .remove({})
+    .then(() => db.User.collection.insertMany(UserSeed))
+    .then(data => {
+      console.log(data.insertedIds.length + " records inserted!");
+      process.exit(0);
+    })
+    .catch(err => {
+      console.error(err);
+      process.exit(1);
+    });
+  
+

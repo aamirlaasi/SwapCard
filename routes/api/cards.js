@@ -44,7 +44,7 @@ router
   .get(cardsController.getTradeCards)
 // Matches with "/api/cards/saveCard:"
 router
-.route("/cancelTradeCard/:id")
+.route("/cancelTradeCard/:id-:id2")
 .get(cardsController.cancelTradeCard)
 // Matches with "/api/cards/removeCard/:id"
 router
@@ -52,7 +52,15 @@ router
 .delete(cardsController.removeCard)
 // Matches with "/api/cards/acceptTrade/:id"
 router
-.route("/acceptTrade/:id-:traderEmail")
+.route("/acceptTrade/:id-:traderEmail-:id2-:email")
 .get(cardsController.acceptTrade)
+// Matches with "/api/cards/onwerGet/:id"
+router
+.route("/ownerGet/:id-:ownerEmail")
+.get(cardsController.ownerGet)
+// Matches with "/api/cards/otherCard/:email"
+router
+.route("/otherCard/:email")
+.get(cardsController.getOtherCard)
 
 module.exports = router;

@@ -47,6 +47,10 @@ var cardSchema = new Schema({
   traderEmail:{
     type:String,
     default:""
+  },
+  expectedOwner:{
+    type:String,
+    default:""
   }
 });
 

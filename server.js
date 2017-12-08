@@ -22,6 +22,7 @@ app.use(routes);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+console.log(auth_config);
 // Serve up static assets
 app.use(express.static("client/build"));
 

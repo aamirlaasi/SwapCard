@@ -32,7 +32,7 @@ router
 router
 .route("/userCardsSamePrice/:email-:price")
 .get(cardsController.getCardsSamePrice)
-  
+
 // Matches with "/api/cards/saveCard:"
 router
   .route("/addNewCard/:store-:price-:exp-:fimage-:bimage-:email")
@@ -62,5 +62,11 @@ router
 router
 .route("/otherCard/:email")
 .get(cardsController.getOtherCard)
+
+router
+.route("/callback")
+.get('/*', function(req, res) {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+})
 
 module.exports = router;

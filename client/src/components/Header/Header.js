@@ -66,8 +66,8 @@ class Header extends Component {
         <div className="jumbotron text-center">
             {/* <Login closeLogin={this.closeLogin} handleLogin={this.state.selectedLogin} /> */}
             {/* <Signup closeSignup={this.closeSignup} handleSignup={this.state.selectedSignup} handleSignupSubmit={this.handleSignupSubmit} /> */}
-            <h1>SwapCard</h1>
-            <h2>A place to trade your unused and unwanted gift cards for retailer you prefer</h2>
+            <h1>SwapCard <i class="fa fa-credit-card-alt" aria-hidden="true"></i></h1>
+            <h2>A place to trade your unused and unwanted gift cards for retailers you prefer</h2>
             {localStorage.getItem("profile") ? <p>Logged in as: {localStorage.getItem("profile")}</p> : ""}
             {
               !this.auth.isAuthenticated() && (
@@ -76,7 +76,7 @@ class Header extends Component {
                     className="btn-margin"
                     onClick={this.login.bind(this)}
                   >
-                    Log In / Sign-up
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>  Log In / <i class="fa fa-user-plus" aria-hidden="true"></i> Sign-up
                   </Button>
                 )
             }
@@ -85,7 +85,7 @@ class Header extends Component {
               this.auth.isAuthenticated() && (
                   <Button
                     bsStyle="primary"
-                    className="btn-margin"
+                    className="btn-margin btn-lg"
                     onClick={this.logout.bind(this)}
                   >
                     Log Out
